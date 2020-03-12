@@ -8,6 +8,7 @@ mvc是分离UI跟业务逻辑的框架<br/>
 * diff算法优化没必要的build
 
 ## 介绍
+#### 1.Stateful：
 ``` Dart
 
 Stateful(
@@ -18,6 +19,16 @@ Stateful(
   },
 )
 ``` 
-`controller.setState((){})`的时候会有点diff算法进行进行刷新
+`controller.setState((){})`的时候会根据算法进行进行刷新
+
+#### 2.ControllerBuild
+
+```Dart
+ControllerBuilder(
+  builder: (OneController c) {
+    return return Text(c.statelessText);
+  },
+);
+```
 
 ### example文件夹是运行demo
