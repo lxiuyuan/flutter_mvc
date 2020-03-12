@@ -23,6 +23,7 @@ Stateful(
 <br/>
 ### 2.ControllerBuild:
 * 获取BasePage下的ThisController
+
 ```Dart
 ControllerBuilder(
   builder: (ThisController c) {
