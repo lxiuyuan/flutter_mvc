@@ -1,6 +1,6 @@
 # flutter_mvc
 mvc是分离UI跟业务逻辑的框架<br/>
-## 特点
+# 特点
 * 生命周期完善
 * 逻辑清晰
 * 提高效率
@@ -8,7 +8,7 @@ mvc是分离UI跟业务逻辑的框架<br/>
 * diff算法优化没必要的build
 
 ## 介绍
-#### 1.Stateful：
+### 1.Stateful：
 ``` Dart
 
 Stateful(
@@ -20,8 +20,7 @@ Stateful(
 )
 ``` 
 `controller.setState((){})`的时候会根据算法进行进行刷新<br/>
-\-----------------------
-#### 2.ControllerBuild
+### 2.ControllerBuild
 
 ```Dart
 ControllerBuilder(
