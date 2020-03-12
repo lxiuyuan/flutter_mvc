@@ -19,7 +19,7 @@ Stateful(
   },
 )
 ``` 
-`controller.setState((){})`的时候会根据算法进行进行刷新<br/>
+* `controller.setState((){})`的时候会根据算法进行进行刷新<br/>
 <br/>
 ### 2.子控件获取BasePage下controller
 #### 2.1. ControllerBuild
@@ -32,7 +32,6 @@ ControllerBuilder(
   },
 );
 ```
-<br/>
 
 #### 2.2. BaseState:
 * 获取BasePage下的ThisController
@@ -49,5 +48,68 @@ class _ThisStatefulState extends BaseState<ThisStateful,ThisController> {
   }
 }
 ```
+</br>
 
-### example文件夹是运行demo
+### 3.FragmentWidget
+* 类似于淘宝切换首页、分类、购物车的组件
+* 生命周期完善
+* 需要传递controller数组
+view.dart
+```Dart
+class MainController extends BaseController {
+   
+   MainController():super(MainPage());
+   var fragmentController=FragmentController();
+   @override
+   void initState(){
+       super.initState();
+       
+   }
+
+   void setPage(int index){
+     fragmentController.animToPage(index);
+   }
+   
+}
+```
+controller.dart
+```Dart
+class MainPage extends BasePage<MainController> {
+  var fragments = [OneController(), TwoController()];
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: <Widget>[
+          Expanded(
+              child: FragmentWidget(
+            controller: c.fragmentController,
+            children: fragments,
+          )),
+          Row(
+            children: <Widget>[
+              Expanded(
+                  child: FlatButton(
+                      onPressed: () {
+                        c.setPage(0);
+                      },
+                      child: Text("OnePage"))),
+              Expanded(
+                  child: FlatButton(
+                      onPressed: () {
+                        c.setPage(1);
+                      },
+                      child: Text("TwoPage"))),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+```
+
+# example文件夹下可以运行demo
