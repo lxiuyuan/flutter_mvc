@@ -22,7 +22,7 @@ Stateful(
 `controller.setState((){})`的时候会根据算法进行进行刷新<br/>
 <br/>
 ### 2.子控件获取BasePage下controller
-#### 2.1ControllerBuild
+#### 2.1. ControllerBuild
 * 获取BasePage下的ThisController
 
 ```Dart
@@ -33,7 +33,8 @@ ControllerBuilder(
 );
 ```
 <br/>
-#### 2.2.BaseState:
+
+#### 2.2. BaseState:
 * 获取BasePage下的ThisController
 ```Dart
 class ThisStateful extends StatefulWidget {
