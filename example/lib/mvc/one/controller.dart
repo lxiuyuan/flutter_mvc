@@ -71,7 +71,7 @@ class OneController extends BaseController {
   ///click按钮点击事件
   void onAllClick() {
     ////效果查看log输出
-//    setState();
-  EmptyController().push(context);
+    setState();
+//  EmptyController().push(context);
   }
 }
