@@ -22,13 +22,29 @@ Stateful(
 `controller.setState((){})`的时候会根据算法进行进行刷新<br/>
 <br/>
 ### 2.ControllerBuild:
-
+获取BasePage下的ThisController
 ```Dart
 ControllerBuilder(
   builder: (ThisController c) {
-    return return Text(c.statelessText);
+    return Text(c.statelessText);
   },
 );
+```
+
+### 3.BaseState:
+获取BasePage下的ThisController
+```Dart
+class ThisStateful extends StatefulWidget {
+  @override
+  _ThisStatefulState createState() => _ThisStatefulState();
+}
+
+class _ThisStatefulState extends BaseState<ThisStateful,ThisController> {
+  @override
+  Widget build(BuildContext context) {
+    return Text(c.text);
+  }
+}
 ```
 
 ### example文件夹是运行demo
