@@ -11,7 +11,7 @@ class FragmentWidget extends StatefulWidget {
   _FragmentWidgetState createState() => _FragmentWidgetState();
 }
 
-class _FragmentWidgetState extends State<FragmentWidget> {
+class _FragmentWidgetState extends State<FragmentWidget> with WidgetsBindingObserver {
   FragmentController controller;
 
   @override
@@ -20,7 +20,26 @@ class _FragmentWidgetState extends State<FragmentWidget> {
     controller._registerState(this);
     initController();
     controller.firstResume();
+    WidgetsBinding.instance.addObserver(this);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+
+    super.didChangeAppLifecycleState(state);
+    if(state==AppLifecycleState.resumed){
+      controller.resume();
+    }else if(state==AppLifecycleState.paused){
+      controller.pause();
+    }
   }
 
   var isStart = true;

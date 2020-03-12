@@ -22,7 +22,7 @@ class TwoController extends BaseController {
   @override
   void initState() {
     super.initState();
-    animationController=AnimationMvcController(value: 1,lowerBound: 0,controller: this);
+    animationController=AnimationMvcController(value: 1,controller: this);
     _initListener();
     print("${thisName}Controller initState()");
   }
@@ -52,6 +52,7 @@ class TwoController extends BaseController {
 
   ///click 透明度动画
   void onAnimationClick() {
+    animationController.animateTo(1-alpha,duration: Duration(milliseconds: 500),curve: Curves.fastOutSlowIn);
   }
    
 }

@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33d1d3cf-85ee-43ec-86f6-21b1ab37d0ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/lib/mvc/empty/controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/mvc/empty/view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/animation.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/manager.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/animation.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/manager.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/mvc/one/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/one/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/mvc/empty/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/empty/view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/mvc/two/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/two/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/mvc/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutter_mvc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_mvc.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/fragment/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fragment/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/loading.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/loading.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/toast.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/manager.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

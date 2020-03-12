@@ -7,6 +7,6 @@ class EmptyPage extends BasePage<EmptyController>{
    
    @override
    Widget build(BuildContext context){
-       return Container();
+       return Container(color: Colors.white,);
    }
 }
