@@ -22,6 +22,7 @@ Stateful(
 * `controller.setState((){})`的时候会根据算法进行进行刷新<br/>
 <br/>
 ### 2.子控件获取BasePage下controller
+<br/>
 #### 2.1. ControllerBuild
 * 获取BasePage下的ThisController
 
