@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 class LoadingDialog extends StatefulWidget {
   @required
   LoadingController controller;
+  @required
+  Widget child;
 
-  LoadingDialog({@required this.controller});
+  LoadingDialog({@required this.controller,@required this.child});
 
   @override
   _LoadingDialogState createState() => _LoadingDialogState();
@@ -40,7 +42,7 @@ class _LoadingDialogState extends State<LoadingDialog>
           opacity: controller.animValue,
           child: Transform.scale(
             scale: controller.animValue,
-            child: Loading(),
+            child: Loading(child: widget.child,),
           )),
     );
   }
@@ -112,8 +114,9 @@ class LoadingController {
 ///视图
 class Loading extends StatelessWidget {
   final String text;
+  final Widget child;
 
-  Loading({this.text});
+  Loading({this.text,this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -121,13 +124,6 @@ class Loading extends StatelessWidget {
         onTap: () {},
         child: Container(
             color: Color(0x01ffffff),
-            child: Center(
-              child: SizedBox(
-                  width: 28,
-                  height: 28,
-                  child: CupertinoActivityIndicator(
-                    radius: 15,
-                  )),
-            )));
+            child:child));
   }
 }

@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 export 'src/page.dart';
 export 'src/fragment/view.dart';
+export 'src/animation.dart';
+export 'src/manager.dart';
 class FlutterMvc {
   static const MethodChannel _channel =
       const MethodChannel('flutter_mvc');

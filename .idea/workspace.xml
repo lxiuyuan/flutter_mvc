@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33d1d3cf-85ee-43ec-86f6-21b1ab37d0ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/mvc/empty/controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/mvc/empty/view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/animation.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/manager.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/animation.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/manager.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/mvc/one/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/one/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/mvc/two/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/two/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/mvc/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_mvc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_mvc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/fragment/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fragment/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/loading.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/loading.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/toast.dart" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +25,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="8175f96b" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YutXV3hXdZeQ1jyTl3T0xP2Aa7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />

@@ -1,4 +1,5 @@
 import 'package:flutter/animation.dart';
+import 'package:flutter_mvc_example/mvc/empty/controller.dart';
 
 import 'view.dart';
 import 'package:flutter_mvc/flutter_mvc.dart';
@@ -29,19 +30,16 @@ class OneController extends BaseController {
   @override
   void initState() {
     super.initState();
-    _initListener();
     print("${thisName}Controller initState()");
-  }
-
-  void _initListener() {
-    super.animationController.addListener(() {
-      alpha = animationController.value;
-      setState();
-    });
   }
 
   void onResume() {
     super.onResume();
+
+    showLoading();
+    Future.delayed(Duration(milliseconds: 1500),(){
+      dismissLoading();
+    });
     print("${thisName}Controller onResume()");
   }
 
@@ -73,6 +71,7 @@ class OneController extends BaseController {
   ///click按钮点击事件
   void onAllClick() {
     ////效果查看log输出
-    setState();
+//    setState();
+  EmptyController().push(context);
   }
 }

@@ -10,7 +10,9 @@ class ControllerInherited extends InheritedWidget{
 
   //定义一个便捷方法，方便子树中的widget获取共享数据
   static ControllerInherited of(BuildContext context) {
-    return context.inheritFromWidgetOfExactType(ControllerInherited);
+
+    return context.dependOnInheritedWidgetOfExactType<ControllerInherited>();
+//    return context.inheritFromWidgetOfExactType(ControllerInherited);
   }
 
 

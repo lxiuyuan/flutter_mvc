@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mvc/src/manager.dart';
 import 'loading.dart';
 import 'widget.dart';
-import 'toast.dart';
 
 ///State基类 获取controller
 abstract class BaseState<T extends StatefulWidget, S extends BaseController>
@@ -211,8 +211,8 @@ abstract class BasePage<T extends BaseController> {
   BaseController _controller;
 
   ///获取内部变量 mvc config
-  static MvcConfig getMvcConfig(BasePage page){
-    return page._state.mvcConfig;
+  static MvcAttribute getMvcAttribute(BasePage page) {
+    return page._state.mvcAttribute;
   }
 
   Widget get widget {
@@ -296,13 +296,19 @@ class __PageWidgetState extends State<_PageWidget>
     with SingleTickerProviderStateMixin {
   BasePage basePage;
 
-  MvcConfig mvcConfig=MvcConfig();
+  MvcAttribute get mvcAttribute=>widget.basePage._controller._mvcAttribute;
+
   @override
   void initState() {
+    mvcAttribute.state = this;
     this.basePage = widget.basePage;
     basePage._registerState(this);
     basePage.initState();
     basePage._controller?.initState();
+    if (mvcAttribute.canManager) {
+      MvcManager.instance.addController(basePage.controller);
+      MvcManager.instance.resume(basePage.controller);
+    }
     super.initState();
   }
 
@@ -320,20 +326,44 @@ class __PageWidgetState extends State<_PageWidget>
   }
 
   void onResume() {
+    if (mvcAttribute.canManager) {
+      MvcManager.instance.resume(basePage.controller);
+    }
+    //判断是否允许
+    if (!mvcAttribute.canResume) {
+      return;
+    }
     basePage.onResume();
     basePage._controller?.onResume();
   }
 
   void onPause() {
+    if (!mvcAttribute.canPause) {
+      return;
+    }
     basePage.onPause();
     basePage._controller?.onPause();
   }
 
   @override
   void dispose() {
+    if (mvcAttribute.canManager) {
+      MvcManager.instance.removeController(basePage.controller);
+    }
     basePage.dispose();
     basePage._controller?.dispose();
     super.dispose();
+  }
+  ///创建loading 样式组件
+  Widget createLoadingWidget(){
+    return Center(
+      child: SizedBox(
+          width: 28,
+          height: 28,
+          child: CupertinoActivityIndicator(
+            radius: 15,
+          )),
+    );
   }
 
   @override
@@ -347,6 +377,7 @@ class __PageWidgetState extends State<_PageWidget>
         Visibility(
             child: LoadingDialog(
           controller: basePage._loadingController,
+              child: createLoadingWidget(),
         ))
       ],
     );
@@ -380,6 +411,37 @@ Route _routeBuild(Widget widget) {
   });
 }
 
+///扩展方法
+extension E on AnimationController {
+  static AnimationController createByController(BaseController c) {
+    return AnimationController(vsync: c._state);
+  }
+
+  AnimationController createByController1(BaseController c) {
+    return AnimationController(vsync: c._state);
+  }
+}
+
+//创建动画controller
+AnimationController createAnimationController(
+    {double value,
+    Duration duration,
+    Duration reverseDuration,
+    String debugLabel,
+    double lowerBound = 0.0,
+    double upperBound = 1.0,
+    @required BaseController controller}) {
+  var animationController = AnimationController(
+      value: value,
+      duration: duration,
+      reverseDuration: reverseDuration,
+      debugLabel: debugLabel,
+      lowerBound: lowerBound,
+      upperBound: upperBound,
+      vsync: controller._state);
+  return animationController;
+}
+
 ///controller基类
 ///里面包含了app界面的生命周期
 ///里面还包含了
@@ -388,24 +450,18 @@ class BaseController {
     page._registerController(this);
 //    _startPage();
   }
+
   ///获取内部变量 mvc config
-  static MvcConfig getMvcConfig(BaseController c){
-    return c._state.mvcConfig;
+  static MvcAttribute getMvcAttribute(BaseController c) {
+    return c._mvcAttribute;
   }
 
+  MvcAttribute _mvcAttribute = MvcAttribute();
 
   __PageWidgetState _state;
   BasePage page;
-  Widget get widget=>page.widget;
 
-  AnimationController _animationController;
-
-  AnimationController get animationController {
-    if (_animationController == null) {
-      _animationController = AnimationController(vsync: _state);
-    }
-    return _animationController;
-  }
+  Widget get widget => page.widget;
 
   ///菊花圈控制器
   LoadingController _loadingController;
@@ -413,7 +469,6 @@ class BaseController {
   BuildContext get context => _state?.context;
 
   List<_StatefulState> _listState = [];
-
 
   bool _isFirstTime = true;
 
@@ -515,20 +570,25 @@ class BaseController {
   }
 }
 
-class MvcConfig{
+class MvcAttribute {
+//  是否进入管理器
+  var canManager = true;
 //  重新回到当前界面时，是否调用回掉方法onResume()
-  var canResume=true;
+  var canResume = true;
   //  跳转其他界面或者当前界面不可见时，是否调用回掉方法onPause()
-  var canPause=true;
-  __PageWidgetState _state;
+  var canPause = true;
+
   //获取page
-  BasePage get page=>_state.basePage;
+  BasePage get page => state.basePage;
   //获取controller
-  BaseController get controller=>_state.basePage._controller;
+  BaseController get controller => state.basePage._controller;
   ///获取所有的当前界面所有的stateful bind集合
-  List<_StatefulState> get listStatefulState{
+  List<_StatefulState> get listStatefulState {
     return controller._listState;
   }
+  __PageWidgetState state;
+
   ///loading动画
-  LoadingController get loadingController=>controller._loadingController;
+  LoadingController get loadingController => controller._loadingController;
+
 }

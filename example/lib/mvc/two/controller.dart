@@ -17,15 +17,18 @@ class TwoController extends BaseController {
 
   var alpha = 1.0;
 
+  AnimationMvcController animationController;
+
   @override
   void initState() {
     super.initState();
+    animationController=AnimationMvcController(value: 1,lowerBound: 0,controller: this);
     _initListener();
     print("${thisName}Controller initState()");
   }
 
   void _initListener() {
-    super.animationController.addListener(() {
+    animationController.addListener(() {
       alpha = animationController.value;
       print(alpha);
       setState();
@@ -49,7 +52,6 @@ class TwoController extends BaseController {
 
   ///click 透明度动画
   void onAnimationClick() {
-    animationController.animateTo(1-alpha,duration: Duration(milliseconds: 400),curve: Curves.fastOutSlowIn);
   }
    
 }

@@ -8,25 +8,35 @@ import 'package:flutter_mvc/flutter_mvc.dart';
 
 ///description:主页
 class MainPage extends BasePage<MainController> {
-  var fragment=[
-    OneController(),
-    TwoController()
-  ];
+  var fragments = [OneController(), TwoController()];
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       child: Column(
         children: <Widget>[
-          Expanded(child: FragmentWidget(controller: c.fragmentController,children: fragment,)),
-          Row(children: <Widget>[
-            Expanded(child: FlatButton(onPressed: (){
-              c.setPage(0);
-            }, child: Text("OnePage"))),
-            Expanded(child: FlatButton(onPressed: (){
-              c.setPage(1);
-            }, child: Text("TwoPage"))),
-          ],)
+          Expanded(
+              child: FragmentWidget(
+            controller: c.fragmentController,
+            children: fragments,
+          )),
+          Row(
+            children: <Widget>[
+              Expanded(
+                  child: FlatButton(
+                      onPressed: () {
+                        c.setPage(0);
+                      },
+                      child: Text("OnePage"))),
+              Expanded(
+                  child: FlatButton(
+                      onPressed: () {
+                        c.setPage(1);
+                      },
+                      child: Text("TwoPage"))),
+            ],
+          )
         ],
       ),
     );
