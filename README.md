@@ -59,7 +59,9 @@ class _ThisStatefulState extends BaseState<ThisStateful,ThisController> {
 * 类似于淘宝切换首页、分类、购物车的组件
 * 生命周期完善
 * 需要传递controller数组<br/>
-view.dart<br/>
+
+view.dart
+
 ```Dart
 class MainController extends BaseController {
    
