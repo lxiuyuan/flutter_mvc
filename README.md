@@ -20,7 +20,8 @@ Stateful(
 )
 ``` 
 `controller.setState((){})`的时候会根据算法进行进行刷新<br/>
-### 2.ControllerBuild
+<br/>
+### 2.ControllerBuild:
 
 ```Dart
 ControllerBuilder(
