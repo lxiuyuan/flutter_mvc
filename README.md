@@ -79,7 +79,7 @@ class MainController extends BaseController {
    
 }
 ```
-controller.dart
+`controller.dart`
 ```Dart
 class MainPage extends BasePage<MainController> {
   var fragments = [OneController(), TwoController()];
