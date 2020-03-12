@@ -21,9 +21,10 @@ Stateful(
 ``` 
 `controller.setState((){})`的时候会根据算法进行进行刷新<br/>
 <br/>
+
 ###  2.子控件获取BasePage下controller
-<br/>
-####  2.1. ControllerBuild
+
+####  2.1. ControllerBuild<br/>
 
 ```Dart
 ControllerBuilder(
@@ -32,9 +33,12 @@ ControllerBuilder(
   },
 );
 ```
-</br>
+
+
 #### 2.2. BaseState:
+
 * 获取BasePage下的ThisController
+
 ```Dart
 class ThisStateful extends StatefulWidget {
   @override
@@ -48,13 +52,14 @@ class _ThisStatefulState extends BaseState<ThisStateful,ThisController> {
   }
 }
 ```
+
 </br>
 
 ### 3.FragmentWidget
 * 类似于淘宝切换首页、分类、购物车的组件
 * 生命周期完善
-* 需要传递controller数组
-view.dart
+* 需要传递controller数组<br/>
+view.dart<br/>
 ```Dart
 class MainController extends BaseController {
    
