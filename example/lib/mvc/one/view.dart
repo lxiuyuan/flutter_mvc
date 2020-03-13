@@ -68,3 +68,16 @@ class _DemoStatefulState extends BaseState<DemoStateful, OneController> {
     );
   }
 }
+
+class ThisStateful extends StatefulWidget {
+  @override
+  _ThisStatefulState createState() => _ThisStatefulState();
+}
+
+class _ThisStatefulState extends BaseState<ThisStateful,OneController> {
+  @override
+  Widget build(BuildContext context) {
+    return Text(c.text);
+  }
+}
+
