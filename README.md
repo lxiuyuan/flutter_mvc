@@ -7,8 +7,8 @@ mvc是分离UI跟业务逻辑的框架<br/>
 * 状态控制视图
 * diff算法优化没必要的build
 
-## 介绍
-### 1.Stateful：
+# 介绍
+## 1.Stateful：
 ``` Dart
 
 Stateful(
@@ -22,9 +22,9 @@ Stateful(
 `controller.setState((){})`的时候会根据算法进行进行刷新<br/>
 <br/>
 
-###  2.子控件获取BasePage下controller
+##  2.子控件获取BasePage下controller
 
-####  2.1. ControllerBuild<br/>
+###  2.1. ControllerBuild<br/>
 
 ```Dart
 ControllerBuilder(
@@ -35,7 +35,7 @@ ControllerBuilder(
 ```
 
 
-#### 2.2. BaseState:
+### 2.2. BaseState:
 
 * 获取BasePage下的ThisController
 
@@ -55,7 +55,7 @@ class _ThisStatefulState extends BaseState<ThisStateful,ThisController> {
 
 </br>
 
-### 3.FragmentWidget
+## 3.FragmentWidget
 * 类似于淘宝切换首页、分类、购物车的组件
 * 生命周期完善
 * 需要传递controller数组<br/>
