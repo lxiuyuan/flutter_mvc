@@ -5,7 +5,7 @@ mvc是分离UI跟业务逻辑的框架<br/>
 * 逻辑清晰
 * 提高效率
 * 状态控制视图
-* diff算法优化没必要的build
+* diff算法优化性能
 
 # 介绍
 ## 1.Stateful：
@@ -24,7 +24,9 @@ Stateful(
 
 ##  2.子控件获取BasePage下controller
 
-###  2.1. ControllerBuild<br/>
+###  2.1. ControllerBuild
+
+* 获取BasePage下的ThisController
 
 ```Dart
 ControllerBuilder(
@@ -118,5 +120,10 @@ class MainPage extends BasePage<MainController> {
 }
 
 ```
+
+#管理组件MvcManager：
+* Mvc
+* 可以获取到app全部的BaseController
+* current
 
 # example文件夹下可以运行demo
