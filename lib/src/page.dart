@@ -160,6 +160,7 @@ class __PageWidgetState extends State<_PageWidget>
     super.dispose();
   }
   ///创建loading 样式组件
+  ///可以被重写
   Widget createLoadingWidget(){
     return Center(
       child: SizedBox(
