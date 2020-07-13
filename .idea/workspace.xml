@@ -2,13 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33d1d3cf-85ee-43ec-86f6-21b1ab37d0ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/lib/common/utils/http.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/mvc/goods_list/bean.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/mvc/goods_list/page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/one/controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/one/view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/three/controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/three/view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/two/controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/two/view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/material_app.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/navigator.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/mvc/one/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/one/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/mvc/one/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/one/view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_mvc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_mvc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/manager.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +29,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="8175f96b" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="192.168.1.137:5555" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -35,14 +48,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/lib/common/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/src" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/example/lib/common/utils" />
       <recent name="$PROJECT_DIR$/lib/src" />
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/example/lib/common/utils" />
     </key>
   </component>
   <component name="RunDashboard">

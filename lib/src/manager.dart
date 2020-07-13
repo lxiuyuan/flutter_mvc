@@ -52,7 +52,6 @@ class MvcManager extends WidgetsBindingObserver{
   }
   ///活跃的
   void resume(BaseController controller){
-    assert(_list.contains(controller));
     currentController=controller;
   }
 }

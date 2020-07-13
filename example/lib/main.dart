@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
+import 'package:flutter_mvc/flutter_mvc.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mvc/flutter_mvc.dart';
 import 'package:flutter_mvc_example/mvc/controller.dart';
 import 'package:flutter_mvc_example/mvc/one/controller.dart';
+import 'package:flutter_mvc_example/mvc/route_test/one/controller.dart';
 
 void main() => runApp(MyApp());
 
@@ -44,8 +45,8 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-
+    //需要用MvcMaterialApp代替MaterialApp
+    return MvcMaterialApp(
       home: Builder(
         builder: (context) {
           return Scaffold(
@@ -53,9 +54,17 @@ class _MyAppState extends State<MyApp> {
               title: const Text('Plugin example app'),
             ),
             body: Center(
-              child: FlatButton(onPressed: (){
-                MainController().push(context);
-              }, child: Text("enter")),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  OutlineButton(onPressed: (){
+                    MainController().push(context);
+                  }, child: Text("test")),
+                  OutlineButton(onPressed: (){
+                    RouteOneController().push(context);
+                  },child: Text("test:controller.pop的强大"),)
+                ],
+              ),
             ),
           );
         }

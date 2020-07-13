@@ -1,14 +1,43 @@
 # flutter_mvc
-mvc是分离UI跟业务逻辑的框架<br/>
+mvc是分离UI跟业务逻辑的框架(动静分离)<br/>
 # 特点
 * 生命周期完善
+* 动静分离
 * 逻辑清晰
 * 提高效率
-* 状态控制视图
 * diff算法优化性能
 
-# 介绍
+#INSTALL
+```Flutter
+  flutter_mvc:
+    git: https://github.com/lxiuyuan/flutter_mvc.git
+```
+
+#AndroidStudio Plugin
+### 搜索"flutter_mvc"
+一键生成基础代码  
+管理维护mvc
+生成fluro代码
+
+#开始
+###引用```MvcMaterialApp```替换```MaterialApp```
+```
+    MvcMaterialApp(
+          home: ...,
+    );
+```
+
+# Controller
+###var controller=new Controller();<br/>
+* 跳转界面：controller.push(context);
+* 关闭界面: controller.pop(result);
+* 获取widget: controller.widget;
+
+
+# 其他组件介绍
+
 ## 1.Stateful：
+
 ``` Dart
 
 Stateful(
@@ -19,12 +48,14 @@ Stateful(
   },
 )
 ``` 
+
 `controller.setState((){})`的时候会根据算法进行进行刷新<br/>
+
 <br/>
 
-##  2.子控件获取BasePage下controller
+## 2.子控件获取BasePage下controller
 
-###  2.1. ControllerBuild
+### 2.1. ControllerBuild
 
 * 获取BasePage下的ThisController
 
@@ -34,14 +65,15 @@ ControllerBuilder(
     return Text(c.statelessText);
   },
 );
-```
 
+```
 
 ### 2.2. BaseState:
 
 * 获取BasePage下的ThisController
 
 ```Dart
+
 class ThisStateful extends StatefulWidget {
   @override
   _ThisStatefulState createState() => _ThisStatefulState();
@@ -53,9 +85,10 @@ class _ThisStatefulState extends BaseState<ThisStateful,ThisController> {
     return Text(c.text);
   }
 }
+
 ```
 
-</br>
+<br/>
 
 ## 3.FragmentWidget
 * 类似于淘宝切换首页、分类、购物车的组件
@@ -127,3 +160,4 @@ class MainPage extends BasePage<MainController> {
 * current
 
 # example文件夹下可以运行demo
+

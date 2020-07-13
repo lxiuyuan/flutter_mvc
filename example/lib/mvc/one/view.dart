@@ -23,10 +23,10 @@ class OnePage extends BasePage<OneController> {
               return Text(c.text);
             },),
             SizedBox(height: 50,),
-            FlatButton(onPressed: c.onStatelessClick, child: Text("statelessText Change")),
-            FlatButton(onPressed: c.onStatefulClick, child: Text("statefulText Change")),
-            FlatButton(onPressed: c.onTextClick, child: Text("text Change")),
-            FlatButton(onPressed: c.onAllClick, child: Text("all Change"))
+            OutlineButton(onPressed: c.onStatelessClick, child: Text("statelessText Change")),
+            OutlineButton(onPressed: c.onStatefulClick, child: Text("statefulText Change")),
+            OutlineButton(onPressed: c.onTextClick, child: Text("text Change")),
+            OutlineButton(onPressed: c.onAllClick, child: Text("all Change")),
           ],
         ),
       ),

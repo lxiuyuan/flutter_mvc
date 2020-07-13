@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mvc/src/manager.dart';
+import 'package:flutter_mvc/src/navigator.dart';
 import 'loading.dart';
 import 'widget.dart';
-
 
 ///Page基类
 abstract class BasePage<T extends BaseController> {
@@ -101,7 +101,7 @@ class __PageWidgetState extends State<_PageWidget>
 
   ///参数
   ///外部组件改造内部变量
-  MvcAttribute get mvcAttribute=>widget.basePage._controller._mvcAttribute;
+  MvcAttribute get mvcAttribute => widget.basePage._controller._mvcAttribute;
 
   @override
   void initState() {
@@ -114,6 +114,9 @@ class __PageWidgetState extends State<_PageWidget>
       MvcManager.instance.addController(basePage.controller);
       MvcManager.instance.resume(basePage.controller);
     }
+    if (basePage._controller._mvcAttribute.route == null)
+      basePage._controller._mvcAttribute.route =
+          MvcNavigatorManager.manager.currentRoute;
     super.initState();
   }
 
@@ -152,6 +155,7 @@ class __PageWidgetState extends State<_PageWidget>
 
   @override
   void dispose() {
+    basePage._controller._mvcAttribute.route = null;
     if (mvcAttribute.canManager) {
       MvcManager.instance.removeController(basePage.controller);
     }
@@ -159,9 +163,10 @@ class __PageWidgetState extends State<_PageWidget>
     basePage._controller?.dispose();
     super.dispose();
   }
+
   ///创建loading 样式组件
   ///可以被重写
-  Widget createLoadingWidget(){
+  Widget createLoadingWidget() {
     return Center(
       child: SizedBox(
           width: 28,
@@ -183,7 +188,7 @@ class __PageWidgetState extends State<_PageWidget>
         Visibility(
             child: LoadingDialog(
           controller: basePage._loadingController,
-              child: createLoadingWidget(),
+          child: createLoadingWidget(),
         ))
       ],
     );
@@ -255,6 +260,7 @@ class BaseController {
 
   __PageWidgetState _state;
   BasePage page;
+
   Widget get widget => page.widget;
 
   ///菊花圈控制器
@@ -271,7 +277,11 @@ class BaseController {
   ///  需要自定义路由调用routeBuilder
   Future<dynamic> push(BuildContext context,
       {RouteBuilder routeBuilder = _kRouteBuild}) async {
-    return await Navigator.of(context).push(routeBuilder(this.page.widget));
+    if (_mvcAttribute.route == null) {
+      var route = routeBuilder(this.page.widget);
+      _mvcAttribute.route = route;
+      return await Navigator.of(context).push(route);
+    }
   }
 
   ///刷新
@@ -312,14 +322,23 @@ class BaseController {
     }
   }
 
+  void pop<T extends Object>([T result]) {
+    var route = _mvcAttribute.route;
+    if (route != null) {
+      route.didPop(result);
+      Navigator.of(context).removeRoute(route);
+    } else {
+      Navigator.of(context).pop();
+    }
+  }
+
   void initState() {}
 
   void onResume() {}
 
   void onPause() {}
 
-  void dispose() {
-  }
+  void dispose() {}
 
   void showLoading({String text}) {
     _loadingController.showLoading();
@@ -333,20 +352,25 @@ class BaseController {
 class MvcAttribute {
 //  是否进入管理器
   var canManager = true;
+
 //  重新回到当前界面时，是否调用回掉方法onResume()
   var canResume = true;
+
   //  跳转其他界面或者当前界面不可见时，是否调用回掉方法onPause()
   var canPause = true;
 
+  Route<dynamic> route = null;
+
   //获取page
   BasePage get page => state.basePage;
+
   //获取controller
   BaseController get controller => state.basePage._controller;
+
   ///获取所有的当前界面所有的stateful bind集合
-  List<StatefulState> listStateful=[];
+  List<StatefulState> listStateful = [];
   __PageWidgetState state;
 
   ///loading动画
   LoadingController get loadingController => controller._loadingController;
-
 }
