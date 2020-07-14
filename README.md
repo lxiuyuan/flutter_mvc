@@ -7,20 +7,20 @@ mvc是分离UI跟业务逻辑的框架(动静分离)<br/>
 * 提高效率
 * diff算法优化性能
 
-<br/>#INSTALL
+# INSTALL
 ```Flutter
   flutter_mvc:
     git: https://github.com/lxiuyuan/flutter_mvc.git
 ```
 
-#AndroidStudio Plugin<br/>
+# AndroidStudio Plugin<br/>
 ### 搜索"flutter_mvc"
 一键生成基础代码  
 管理维护mvc
 生成fluro代码
-<br/>
-#开始 <br/>
-###引用```MvcMaterialApp```替换```MaterialApp```
+
+# 开始 
+### 引用```MvcMaterialApp```替换```MaterialApp```
 ```
     MvcMaterialApp(
           home: ...,
@@ -28,7 +28,7 @@ mvc是分离UI跟业务逻辑的框架(动静分离)<br/>
 ```
 
 # Controller <br/>
-###var controller=new Controller();<br/>
+### var controller=new Controller();<br/>
 * 跳转界面：controller.push(context);
 * 关闭界面: controller.pop(result);
 * 获取widget: controller.widget;
@@ -51,7 +51,7 @@ Stateful(
 
 `controller.setState((){})`的时候会根据算法进行进行刷新<br/>
 
-<br/>
+
 
 ## 2.子控件获取BasePage下controller<br/>
 
@@ -154,7 +154,7 @@ class MainPage extends BasePage<MainController> {
 
 ```
 
-#管理组件MvcManager：
+# 管理组件MvcManager：
 * Mvc
 * 可以获取到app全部的BaseController
 * current
