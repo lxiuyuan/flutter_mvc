@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33d1d3cf-85ee-43ec-86f6-21b1ab37d0ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/one/controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/one/view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/three/controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/three/view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/two/controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/lib/mvc/route_test/two/view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/material_app.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/navigator.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/mvc/one/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/one/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/mvc/one/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/one/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutter_mvc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_mvc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
