@@ -28,10 +28,10 @@ mvc是分离UI跟业务逻辑的框架(动静分离)<br/>
 ```
 
 # Controller <br/>
-### var controller=new Controller();<br/>
-* 跳转界面：controller.push(context);
-* 关闭界面: controller.pop(result);
-* 获取widget: controller.widget;
+ ```var controller=new Controller();```
+* 跳转界面：```controller.push(context);```
+* 关闭界面: ```controller.pop(result);```
+* 获取widget: ```controller.widget;```
 
 
 # 其他组件介绍<br/>
