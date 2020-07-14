@@ -95,7 +95,7 @@ class _ThisStatefulState extends BaseState<ThisStateful,ThisController> {
 * 生命周期完善
 * 需要传递controller数组<br/>
 
-view.dart
+controller.dart
 
 ```Dart
 class MainController extends BaseController {
@@ -114,7 +114,7 @@ class MainController extends BaseController {
    
 }
 ```
-`controller.dart`
+`view.dart`
 ```Dart
 class MainPage extends BasePage<MainController> {
   var fragments = [OneController(), TwoController()];
