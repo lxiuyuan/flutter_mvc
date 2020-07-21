@@ -1,8 +1,8 @@
 name: flutter_mvc
-description: A new Flutter plugin.
-version: 0.0.1
-author:
-homepage:
+description: mvc for flutter
+version: 1.0.0
+author: lxiuyuan
+homepage: https://github.com/lxiuyuan/flutter_mvc.git
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
