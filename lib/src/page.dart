@@ -298,6 +298,11 @@ class BaseController {
         isDiff = true;
       }
     }
+    for (var value in _mvcAttribute.listStatefulNew) {
+      if (value.setDiffState()) {
+        isDiff = true;
+      }
+    }
     //没有改变，全局刷新
     if (!isDiff) {
       setRootState();
@@ -369,6 +374,7 @@ class MvcAttribute {
 
   ///获取所有的当前界面所有的stateful bind集合
   List<StatefulState> listStateful = [];
+  List<LocalBindState> listStatefulNew = [];
   __PageWidgetState state;
 
   ///loading动画
