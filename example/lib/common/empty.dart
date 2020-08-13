@@ -29,6 +29,10 @@ final homeJson="""
 	  {
 	  	"name":"运动户外会场",
 	  	"url":"${empty_classify_url2}"
+	  },
+	  {
+	  	"name":"大牌女装",
+	  	"url":"${empty_classify_url1}"
 	  }
 	
 	],

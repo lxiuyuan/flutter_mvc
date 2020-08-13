@@ -167,6 +167,7 @@ class ClassifyItem extends StatelessWidget {
         list.add(Container(
           height: 120,
           width: 0.5,
+          margin: EdgeInsets.only(right: 5),
           color: Color(0xfff9f9f9),
         ));
       }
@@ -175,7 +176,7 @@ class ClassifyItem extends StatelessWidget {
               onTap: () {
                 c.onClassifyItemClick(i);
               },
-              child: Image.network(item.url))));
+              child: Image.network(item.url,fit: BoxFit.fill,))));
     }
     return list;
   }
@@ -187,7 +188,7 @@ class ClassifyItem extends StatelessWidget {
         return Container(
           height: 160,
           margin: EdgeInsets.only(left: 8, right: 8, top: 3),
-          padding: EdgeInsets.only(left: 10, right: 10),
+          padding: EdgeInsets.only(left: 0, right: 0),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(8),
