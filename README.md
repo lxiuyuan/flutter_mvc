@@ -164,5 +164,8 @@ class MainPage extends BasePage<MainController> {
 * 可以获取到app全部的BaseController
 * current:获取当前显示的Controller
 
-# example文件夹下运行demo
+# example
+* 基础用法
+* demo:Home界面
+
 
