@@ -5,6 +5,7 @@ final  empty_classify_url3="https://img.alicdn.com/tfs/TB1nEHEQuL2gK0jSZFmXXc7iX
 final  empty_classify_url4="https://img.alicdn.com/tfs/TB1peLsQpT7gK0jSZFpXXaTkpXa-476-538.jpg_1080x1800q75s0.jpg";
 final  empty_classify_url5="https://img.alicdn.com/tfs/TB1MKHhQxz1gK0jSZSgXXavwpXa-476-538.jpg_1080x1800q75s0.jpg";
 
+final empty_banner_url="https://img.hznzcn.com/upload_file/brand/202007/bbb8e4aa-1664-44c1-820c-6c9711e419c5.png";
 final empty_url="https://img.alicdn.com/imgextra/i1/2104737844/O1CN01A6Mn0b27obL6d9yVE_!!2104737844.jpg_430x430q90.jpg";
 final empty_title="花花公子男士短袖t恤2020新款渐变男夏季休闲冰丝套装情侣装夏装";
 
@@ -14,11 +15,11 @@ final homeJson="""
   "message":"成功",
   "data":{
     "banner":[
-    "${empty_url}",
-    "${empty_url}",
-    "${empty_url}",
-    "${empty_url}",
-    "${empty_url}"
+    "${empty_banner_url}",
+    "${empty_banner_url}",
+    "${empty_banner_url}",
+    "${empty_banner_url}",
+    "${empty_banner_url}"
     ],
   	"classify":[
 	  {
@@ -78,6 +79,34 @@ final homeJson="""
 	   {
 	   	"title":"${empty_title}",
 		 "url":"${empty_url}",
+		 "price":"100.00",
+		 "shop":"灵隐寺分店"
+	   }
+	 ]
+  }
+}
+
+""";
+
+final test="""
+{
+  "status":200,
+  "message":"成功",
+  "data":{
+    "banner":[
+    "",
+    ],
+  	"classify":[
+	  {
+	  	"name":"大牌女装",
+	  	"url":""
+	  },
+	],
+	 "trend":[""],
+	 "like":[
+	   {
+	   	"title":"",
+		 "url":"",
 		 "price":"100.00",
 		 "shop":"灵隐寺分店"
 	   }

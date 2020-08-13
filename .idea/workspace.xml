@@ -6,7 +6,12 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d1d3cf-85ee-43ec-86f6-21b1ab37d0ac" name="Default Changelist" comment="" />
+    <list default="true" id="33d1d3cf-85ee-43ec-86f6-21b1ab37d0ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/common/empty.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/common/empty.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/mvc/demo/home/child/list_bean.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/demo/home/child/list_bean.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin/flutter_mvc.zip" beforeDir="false" afterPath="$PROJECT_DIR$/plugin/flutter_mvc.zip" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,16 +41,16 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/plugin" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/plugin" />
       <recent name="$PROJECT_DIR$/example/images" />
       <recent name="$PROJECT_DIR$/example/lib/common/widget/tab" />
       <recent name="$PROJECT_DIR$/example/lib/mvc/empty/home" />
-      <recent name="$PROJECT_DIR$/plugin" />
       <recent name="$PROJECT_DIR$/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -109,10 +114,10 @@
     </state>
     <state width="1398" height="280" key="GridCell.Tab.0.right/0.23.1440.784@0.23.1440.784" timestamp="1597308964747" />
     <state width="1398" height="297" key="GridCell.Tab.0.right/0.23.1440.788@0.23.1440.788" timestamp="1597295744923" />
-    <state x="221" y="54" key="SettingsEditor" timestamp="1597226810093">
+    <state x="221" y="54" key="SettingsEditor" timestamp="1597310603130">
       <screen x="0" y="23" width="1440" height="784" />
     </state>
-    <state x="221" y="54" key="SettingsEditor/0.23.1440.784@0.23.1440.784" timestamp="1597226810093" />
+    <state x="221" y="54" key="SettingsEditor/0.23.1440.784@0.23.1440.784" timestamp="1597310603130" />
     <state x="221" y="54" key="SettingsEditor/0.23.1440.788@0.23.1440.788" timestamp="1597216625920" />
     <state x="385" y="131" width="670" height="676" key="search.everywhere.popup" timestamp="1597284836554">
       <screen x="0" y="23" width="1440" height="784" />
