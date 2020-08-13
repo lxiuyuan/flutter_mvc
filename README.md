@@ -171,5 +171,5 @@ class MainPage extends BasePage<MainController> {
 [controller.dart](https://github.com/lxiuyuan/flutter_mvc/blob/master/example/lib/mvc/demo/home/controller.dart)<br/>
 [view.dart](https://github.com/lxiuyuan/flutter_mvc/blob/master/example/lib/mvc/demo/home/view.dart)<br/>
 预览：
-![](https://raw.githubusercontent.com/lxiuyuan/flutter_mvc/master/images/home.jpeg)
+![](https://raw.githubusercontent.com/lxiuyuan/flutter_mvc/master/images/home.jpg)
 
