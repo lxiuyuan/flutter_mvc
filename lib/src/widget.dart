@@ -162,14 +162,22 @@ class StatefulState extends State<Stateful> {
 
 
 
-class LocalRefresh extends StatelessWidget {
+
+
+class LocalRefresh extends StatefulWidget {
   LocalBind child;
   LocalRefresh({this.child});
   @override
+  _LocalRefreshState createState() => _LocalRefreshState();
+}
+
+class _LocalRefreshState extends State<LocalRefresh> {
+  @override
   Widget build(BuildContext context) {
-    return child;
+    return widget.child;
   }
 }
+
 
 
 ///节省没必要build次数，可以有效多节约系统资源

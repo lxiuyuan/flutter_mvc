@@ -10,14 +10,19 @@ class MvcStatefulElement extends StatefulElement{
   }
 
   void refresh(){
-    performRebuild();
-//    mvcParent.markNeedsBuild();
+    mvcParent.markNeedsBuild();
+    mvcParent.visitChildren((element) {
+      if(element!=this){
+        throw FlutterError.fromParts(<DiagnosticsNode>[
+          ErrorSummary('LocalBind invalid.'),
+          ErrorDescription(
+              "Please use the 'LocalRefresh (child:LocalBind (bing: () = > [...]， Child:...)) '"
+          ),
+          describeElement(''),
+        ]);
+      }
+    });
 
-//    mvcParent.visitChildren((element) {
-//      if(element==this){
-//
-//      }
-//    });
   }
 
 }

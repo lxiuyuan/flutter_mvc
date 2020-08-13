@@ -30,7 +30,7 @@ class _LoadingDialogState extends State<LoadingDialog>
 
   @override
   void dispose() {
-    controller._animController.dispose();
+//    controller._animController.dispose();
     super.dispose();
   }
 
@@ -85,6 +85,7 @@ class LoadingController {
       });
     }
   }
+
 
   void showLoading() {
     if (isLoading) {

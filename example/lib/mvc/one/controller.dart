@@ -1,5 +1,4 @@
 import 'package:flutter/animation.dart';
-import 'package:flutter_mvc_example/mvc/empty/controller.dart';
 import 'package:flutter_mvc_example/mvc/route_test/one/controller.dart';
 
 import 'view.dart';
@@ -38,7 +37,7 @@ class OneController extends BaseController {
     super.onResume();
 
     showLoading();
-    Future.delayed(Duration(milliseconds: 1500),(){
+    Future.delayed(Duration(milliseconds: 500),(){
       dismissLoading();
     });
     print("${thisName}Controller onResume()");
@@ -73,7 +72,6 @@ class OneController extends BaseController {
   void onAllClick() {
     ////效果查看log输出
     setState();
-//  EmptyController().push(context);
   }
 
 }

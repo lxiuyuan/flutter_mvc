@@ -37,7 +37,6 @@ class OnePage extends BasePage<OneController> {
                 child: Text("statefulText Change")),
             OutlineButton(onPressed: c.onTextClick, child: Text("text Change")),
             OutlineButton(onPressed: c.onAllClick, child: Text("all Change")),
-            Expanded(child: Test())
 
           ],
         ),
@@ -52,31 +51,11 @@ class DemoStateless extends StatelessWidget {
     print("Stateless Build");
     return ControllerBuilder(
       builder: (OneController c) {
-        return LocalBind(
+        return Stateful(
           bind: () => [c.statelessText],
-          child: Text(c.statelessText),
+          builder: (ctx)=>Text(c.statelessText),
         );
       },
-    );
-  }
-}
-
-class Test extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: CustomScrollView(
-        slivers: <Widget>[
-          LocalBind(
-            bind: () => [],
-            child: SliverList(
-              delegate: SliverChildBuilderDelegate((ctx, index) {
-                return Container(height: 20,color: Colors.green,margin: EdgeInsets.only(top: 2,left: 10,right: 10),);
-              }, childCount: 10),
-            ),
-          )
-        ],
-      ),
     );
   }
 }
@@ -93,20 +72,9 @@ class _DemoStatefulState extends BaseState<DemoStateful, OneController> {
     return Stateful(
       bind: () => [c.statefulText],
       builder: (ctx) {
-        return Text("w");
+        return Text("SatefulText:${c.statefulText}");
       },
     );
   }
 }
 
-class ThisStateful extends StatefulWidget {
-  @override
-  _ThisStatefulState createState() => _ThisStatefulState();
-}
-
-class _ThisStatefulState extends BaseState<ThisStateful, OneController> {
-  @override
-  Widget build(BuildContext context) {
-    return Text(c.text);
-  }
-}

@@ -8,6 +8,7 @@ import 'package:flutter_mvc/flutter_mvc.dart';
 import 'package:flutter_mvc_example/mvc/controller.dart';
 import 'package:flutter_mvc_example/mvc/one/controller.dart';
 import 'package:flutter_mvc_example/mvc/route_test/one/controller.dart';
+import 'mvc/demo/home/controller.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,28 +50,40 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     //需要用MvcMaterialApp代替MaterialApp
     return MvcMaterialApp(
-      home: Builder(
-        builder: (context) {
-          return Scaffold(
-            appBar: AppBar(
-              title: const Text('Plugin example app'),
-            ),
-            body: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  OutlineButton(onPressed: (){
-                    MainController().push(context);
-                  }, child: Text("test")),
-                  OutlineButton(onPressed: (){
+      home:Builder(builder: (context) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text('Plugin example app'),
+          ),
+          body: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+
+                OutlineButton(
+                    onPressed: () {
+                      MainController().push(context);
+                    },
+                    child: Text("基础用法")),
+                OutlineButton(
+                  onPressed: () {
                     RouteOneController().push(context);
-                  },child: Text("test:controller.pop的强大"),)
-                ],
-              ),
+                  },
+                  child: Text("controller.pop的作用"),
+                ),
+
+                OutlineButton(
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (ctx){return HomeController().widget;}));
+                  },
+                  child: Text("demo：Home页"),
+                )
+
+              ],
             ),
-          );
-        }
-      ),
+          ),
+        );
+      }),
     );
   }
 }

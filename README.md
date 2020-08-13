@@ -1,5 +1,5 @@
 # flutter_mvc
-mvc是分离UI跟业务逻辑的框架(动静分离)<br/>
+分离UI跟业务逻辑的框架(动静分离)
 # 特点
 * 生命周期完善
 * 动静分离
@@ -31,15 +31,19 @@ mvc是分离UI跟业务逻辑的框架(动静分离)<br/>
  ```var controller=new Controller();```
 * 跳转界面：```controller.push(context);```
 * 关闭界面: ```controller.pop(result);```
-* 获取widget: ```controller.widget;```
+* 获取widget跳转:
+ ```Dart
+Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+   new Controller().widget;
+}));
+```
 
 
 # 其他组件介绍<br/>
 
 ## 1.Stateful：
 
-``` Dart
-
+```Dart
 Stateful(
   ///绑定用到的变量
   bind: ()=>[c.text],
@@ -60,12 +64,13 @@ Stateful(
 * 获取BasePage下的ThisController
 
 ```Dart
-ControllerBuilder(
-  builder: (ThisController c) {
-    return Text(c.statelessText);
-  },
-);
-
+Widget build(context){
+  return ControllerBuilder(
+    builder: (ThisController c) {
+      return Text(c.statelessText);
+    },
+  );
+}
 ```
 
 ### 2.2. BaseState:
@@ -157,7 +162,7 @@ class MainPage extends BasePage<MainController> {
 # 管理组件MvcManager：
 * Mvc
 * 可以获取到app全部的BaseController
-* current
+* current:获取当前显示的Controller
 
-# example文件夹下可以运行demo
+# example文件夹下运行demo
 
