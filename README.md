@@ -168,4 +168,5 @@ class MainPage extends BasePage<MainController> {
 * 基础用法
 * demo:Home界面
 
+![](https://raw.githubusercontent.com/lxiuyuan/flutter_mvc/master/images/home.jpeg)
 
