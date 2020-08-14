@@ -26,7 +26,7 @@ class WidgetPage extends BasePage<WidgetController> {
                       child: Center(
                         child: Text(
                           "效果对比print打印",
-                          style: TextStyle(inherit: false,color: Color(0xffff1111),fontSize: 19),
+                          style: TextStyle(inherit: false,color: Color(0xff000000),fontSize: 22),
                         ),
                       )),
 

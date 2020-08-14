@@ -5,8 +5,6 @@ import 'dart:async';
 import 'package:flutter_mvc/flutter_mvc.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mvc/flutter_mvc.dart';
-import 'package:flutter_mvc_example/mvc/controller.dart';
-import 'package:flutter_mvc_example/mvc/one/controller.dart';
 import 'package:flutter_mvc_example/mvc/route_test/one/controller.dart';
 import 'mvc/case/controller.dart';
 import 'mvc/project/home/controller.dart';

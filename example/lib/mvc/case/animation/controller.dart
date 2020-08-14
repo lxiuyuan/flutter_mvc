@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mvc_example/mvc/one/controller.dart';
 
 import 'view.dart';
 import 'package:flutter_mvc/flutter_mvc.dart';

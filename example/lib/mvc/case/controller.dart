@@ -8,6 +8,9 @@ class CaseController extends BaseController {
    
    CaseController():super(CasePage());
    var mvcTabController=MvcTabController();
+
+   int get pageIndex=> mvcTabController.index;
+
    @override
    void initState(){
        super.initState();
@@ -16,6 +19,7 @@ class CaseController extends BaseController {
 
    void setPage(int index){
      mvcTabController.animToPage(index);
+     setState();
    }
    
 }
