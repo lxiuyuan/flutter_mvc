@@ -21,7 +21,6 @@
 ### [安装插件](https://github.com/lxiuyuan/flutter_mvc/tree/master/plugin)
 <br/>
 <br/>
-<br/>
 
 # 开始 
 ### 引用```MvcMaterialApp```替换```MaterialApp```
