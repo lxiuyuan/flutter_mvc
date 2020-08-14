@@ -14,10 +14,11 @@
 ```
 
 # AndroidStudio Plugin<br/>
-### 搜索"flutter_mvc"
 一键生成基础代码  
 管理维护mvc
-生成fluro代码
+生成fluro代码<br/>
+[下载本地]()
+[安装教程]()
 
 # 开始 
 ### 引用```MvcMaterialApp```替换```MaterialApp```

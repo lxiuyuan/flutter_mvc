@@ -7,6 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33d1d3cf-85ee-43ec-86f6-21b1ab37d0ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/plugin/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/flutter_mvc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flutter_mvc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +42,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -111,10 +114,10 @@
     </state>
     <state width="1398" height="280" key="GridCell.Tab.0.right/0.23.1440.784@0.23.1440.784" timestamp="1597311223108" />
     <state width="1398" height="297" key="GridCell.Tab.0.right/0.23.1440.788@0.23.1440.788" timestamp="1597295744923" />
-    <state x="221" y="54" key="SettingsEditor" timestamp="1597310603130">
+    <state x="221" y="54" key="SettingsEditor" timestamp="1597315678118">
       <screen x="0" y="23" width="1440" height="784" />
     </state>
-    <state x="221" y="54" key="SettingsEditor/0.23.1440.784@0.23.1440.784" timestamp="1597310603130" />
+    <state x="221" y="54" key="SettingsEditor/0.23.1440.784@0.23.1440.784" timestamp="1597315678118" />
     <state x="221" y="54" key="SettingsEditor/0.23.1440.788@0.23.1440.788" timestamp="1597216625920" />
     <state x="385" y="131" width="670" height="676" key="search.everywhere.popup" timestamp="1597284836554">
       <screen x="0" y="23" width="1440" height="784" />
