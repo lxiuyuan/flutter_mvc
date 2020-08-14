@@ -18,7 +18,7 @@
 * 右侧维护mvc列表
 * 快速生成fluro代码
 * json to dart <br/>
-### [安装插件](https://github.com/lxiuyuan/flutter_mvc/tree/master/plugin)
+### [ 安装插件](https://github.com/lxiuyuan/flutter_mvc/tree/master/plugin)
 <br/>
 
 # 开始 
