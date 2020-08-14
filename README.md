@@ -18,7 +18,7 @@
 * 右侧维护mvc列表
 * 快速生成fluro代码
 * json to dart <br/>
-[前往](https://github.com/lxiuyuan/flutter_mvc/tree/master/plugin)
+* [进入](https://github.com/lxiuyuan/flutter_mvc/tree/master/plugin)
 
 # 开始 
 ### 引用```MvcMaterialApp```替换```MaterialApp```
