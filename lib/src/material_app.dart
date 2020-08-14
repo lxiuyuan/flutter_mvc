@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mvc/flutter_mvc.dart';
 
 import 'navigator.dart';
 
 //管理底层
 class MvcMaterialApp extends MaterialApp {
-
   MvcMaterialApp({
     Key key,
     GlobalKey<NavigatorState> navigatorKey,
@@ -32,6 +32,8 @@ class MvcMaterialApp extends MaterialApp {
     bool checkerboardOffscreenLayers = false,
     bool showSemanticsDebugger = false,
     bool debugShowCheckedModeBanner = true,
+    bool isStandbyLifecycle =
+        false, //false默认的生命周期，true备用生命周期（意义：1.17版本官方有bug默认周期问题）
   }) : super(
           key: key,
           navigatorKey: navigatorKey,
@@ -41,8 +43,8 @@ class MvcMaterialApp extends MaterialApp {
           onGenerateRoute: onGenerateRoute,
           onUnknownRoute: onUnknownRoute,
           navigatorObservers: <NavigatorObserver>[
-            MvcNavigatorManager.manager
-          ],
+            MvcNavigatorManager.manager..isPauseAndResume = isStandbyLifecycle
+          ]..addAll(navigatorObservers??[]),
           title: title,
           onGenerateTitle: onGenerateTitle,
           color: color,
@@ -60,7 +62,7 @@ class MvcMaterialApp extends MaterialApp {
           checkerboardOffscreenLayers: checkerboardOffscreenLayers,
           debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         ) {
-//    SpUtils.init();
+    MvcManager.instance.isPauseAndResume = !isStandbyLifecycle;
   }
 }
 
@@ -78,7 +80,6 @@ class _MvcBuilderState extends State<MvcBuilder> {
   @override
   void initState() {
     super.initState();
-
   }
 
   @override

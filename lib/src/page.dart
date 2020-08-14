@@ -96,7 +96,7 @@ class _PageWidget extends StatefulWidget {
 }
 
 class __PageWidgetState extends State<_PageWidget>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin,OnAppLifecycleListener {
   BasePage basePage;
 
   ///参数
@@ -124,6 +124,8 @@ class __PageWidgetState extends State<_PageWidget>
 
   @override
   void deactivate() {
+    //判断是否启动备用生命周期
+    if(!MvcManager.instance.isPauseAndResume) return;
     isStart = !isStart;
     if (isStart) {
       onResume();

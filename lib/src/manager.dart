@@ -4,6 +4,8 @@ import 'package:flutter_mvc/flutter_mvc.dart';
 
 ///mvc管理器+管理原生的生命周期
 class MvcManager extends WidgetsBindingObserver{
+  var isPauseAndResume=true;
+
 
   MvcManager(){
 
