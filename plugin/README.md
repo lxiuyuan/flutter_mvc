@@ -6,7 +6,7 @@
 
 * 2.管理维护mvc
 
-![](https://github.com/lxiuyuan/flutter_mvc/blob/master/plugin/plugin.gif?raw=true)
+![](https://github.com/lxiuyuan/flutter_mvc/blob/master/plugin/cueqf-9bdx2.gif?raw=true)
 
 * 3.生成fluro代码
 
