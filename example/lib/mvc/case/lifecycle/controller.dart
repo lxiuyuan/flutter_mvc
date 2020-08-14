@@ -31,7 +31,7 @@ class LifecycleController extends BaseController {
    @override
    void dispose() {
      super.dispose();
-     T.show(MvcManager.instance.currentController.context,"生命周期:dispose");
+//     T.show(MvcManager.instance.currentController.context,"生命周期:dispose");
    }
    
 
