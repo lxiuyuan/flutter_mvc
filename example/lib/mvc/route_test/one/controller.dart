@@ -1,5 +1,4 @@
 import 'package:flutter_mvc_example/mvc/route_test/two/controller.dart';
-import 'package:flutter_mvc_example/mvc/two/controller.dart';
 
 import 'view.dart';
 import 'package:flutter_mvc/flutter_mvc.dart';

@@ -1,7 +1,5 @@
+import 'package:flutter_mvc_example/mvc/case/animation/controller.dart';
 import 'package:flutter_mvc_example/mvc/case/widget/controller.dart';
-import 'package:flutter_mvc_example/mvc/one/controller.dart';
-import 'package:flutter_mvc_example/mvc/one/view.dart';
-import 'package:flutter_mvc_example/mvc/two/controller.dart';
 
 import 'controller.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +9,7 @@ import 'lifecycle/controller.dart';
 
 ///description:主页
 class CasePage extends BasePage<CaseController> {
-  var fragments = [WidgetController(),LifecycleController(), TwoController()];
+  var fragments = [WidgetController(),LifecycleController(), AnimationDemoController()];
 
   @override
   Widget build(BuildContext context) {

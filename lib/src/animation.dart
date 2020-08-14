@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'page.dart';
 ///用controller实例化
-class AnimationMvcController extends AnimationController{
-  AnimationMvcController({
+class MvcAnimationController extends AnimationController{
+  MvcAnimationController({
     double value,
     Duration duration,
     Duration reverseDuration,
