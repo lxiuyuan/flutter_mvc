@@ -96,12 +96,32 @@ class _PageWidget extends StatefulWidget {
 }
 
 class __PageWidgetState extends State<_PageWidget>
-    with SingleTickerProviderStateMixin,OnAppLifecycleListener {
+    with SingleTickerProviderStateMixin, OnAppLifecycleListener {
   BasePage basePage;
 
   ///参数
   ///外部组件改造内部变量
   MvcAttribute get mvcAttribute => widget.basePage._controller._mvcAttribute;
+  final List<Function> _onResumeListener = [];
+  final List<Function> _onPauseListener = [];
+
+  //添加回调
+  void addOnResumerListener(Function resume) {
+    _onResumeListener.add(resume);
+  }
+
+  void addOnPauseListener(Function pause) {
+    _onPauseListener.add(pause);
+  }
+
+  //删除注册回调
+  void removeOnResumerListener(Function resume) {
+    if (_onResumeListener.contains(resume)) _onResumeListener.remove(resume);
+  }
+
+  void removeOnPauseListener(Function pause) {
+    if (_onPauseListener.contains(pause)) _onPauseListener.remove(pause);
+  }
 
   @override
   void initState() {
@@ -125,7 +145,7 @@ class __PageWidgetState extends State<_PageWidget>
   @override
   void deactivate() {
     //判断是否启动备用生命周期
-    if(!MvcManager.instance.isPauseAndResume) return;
+    if (!MvcManager.instance.isPauseAndResume) return;
     isStart = !isStart;
     if (isStart) {
       onResume();
@@ -135,6 +155,7 @@ class __PageWidgetState extends State<_PageWidget>
     super.deactivate();
   }
 
+  @override
   void onResume() {
     if (mvcAttribute.canManager) {
       MvcManager.instance.resume(basePage.controller);
@@ -143,14 +164,17 @@ class __PageWidgetState extends State<_PageWidget>
     if (!mvcAttribute.canResume) {
       return;
     }
+    _onResumeListener.forEach((element) {element();});
     basePage.onResume();
     basePage._controller?.onResume();
   }
 
+  @override
   void onPause() {
     if (!mvcAttribute.canPause) {
       return;
     }
+    _onPauseListener.forEach((element) {element();});
     basePage.onPause();
     basePage._controller?.onPause();
   }
@@ -248,8 +272,8 @@ AnimationController createAnimationControllerByController(
 ///里面包含了app界面的生命周期
 ///里面还包含了
 class BaseController {
-  BaseController(this.page) {
-    page._registerController(this);
+  BaseController(this._page) {
+    _page._registerController(this);
 //    _startPage();
   }
 
@@ -261,9 +285,9 @@ class BaseController {
   MvcAttribute _mvcAttribute = MvcAttribute();
 
   __PageWidgetState _state;
-  BasePage page;
+  BasePage _page;
 
-  Widget get widget => page.widget;
+  Widget get widget => _page.widget;
 
   ///菊花圈控制器
   LoadingController _loadingController;
@@ -280,7 +304,7 @@ class BaseController {
   Future<dynamic> push(BuildContext context,
       {RouteBuilder routeBuilder = _kRouteBuild}) async {
     if (_mvcAttribute.route == null) {
-      var route = routeBuilder(this.page.widget);
+      var route = routeBuilder(this._page.widget);
       _mvcAttribute.route = route;
       return await Navigator.of(context).push(route);
     }
@@ -296,11 +320,6 @@ class BaseController {
     //判断stateful.bind有没有改变
     bool isDiff = false;
     for (var value in _mvcAttribute.listStateful) {
-      if (value.setDiffState()) {
-        isDiff = true;
-      }
-    }
-    for (var value in _mvcAttribute.listStatefulNew) {
       if (value.setDiffState()) {
         isDiff = true;
       }
@@ -360,6 +379,11 @@ class MvcAttribute {
 //  是否进入管理器
   var canManager = true;
 
+  ///获取内部变量 mvc config
+  static MvcAttribute getMvcAttributeByController(BaseController c) {
+    return c._mvcAttribute;
+  }
+
 //  重新回到当前界面时，是否调用回掉方法onResume()
   var canResume = true;
 
@@ -376,7 +400,6 @@ class MvcAttribute {
 
   ///获取所有的当前界面所有的stateful bind集合
   List<StatefulState> listStateful = [];
-  List<LocalBindState> listStatefulNew = [];
   __PageWidgetState state;
 
   ///loading动画

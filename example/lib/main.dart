@@ -8,7 +8,8 @@ import 'package:flutter_mvc/flutter_mvc.dart';
 import 'package:flutter_mvc_example/mvc/controller.dart';
 import 'package:flutter_mvc_example/mvc/one/controller.dart';
 import 'package:flutter_mvc_example/mvc/route_test/one/controller.dart';
-import 'mvc/demo/home/controller.dart';
+import 'mvc/case/controller.dart';
+import 'mvc/project/home/controller.dart';
 
 void main() => runApp(MyApp());
 
@@ -50,6 +51,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     //需要用MvcMaterialApp代替MaterialApp
     return MvcMaterialApp(
+      isStandbyLifecycle: true,
       home:Builder(builder: (context) {
         return Scaffold(
           appBar: AppBar(
@@ -62,7 +64,7 @@ class _MyAppState extends State<MyApp> {
 
                 OutlineButton(
                     onPressed: () {
-                      MainController().push(context);
+                      CaseController().push(context);
                     },
                     child: Text("基础用法")),
                 OutlineButton(
@@ -76,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                   onPressed: (){
                     Navigator.of(context).push(MaterialPageRoute(builder: (ctx){return HomeController().widget;}));
                   },
-                  child: Text("demo：Home页"),
+                  child: Text("实战：Home页"),
                 )
 
               ],

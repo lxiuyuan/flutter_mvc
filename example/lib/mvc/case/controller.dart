@@ -4,9 +4,9 @@ import 'package:flutter_mvc/flutter_mvc.dart';
 ///Description:主页
 ///Author:djy
 ///date created 2020/03/10
-class MainController extends BaseController {
+class CaseController extends BaseController {
    
-   MainController():super(MainPage());
+   CaseController():super(CasePage());
    var mvcTabController=MvcTabController();
    @override
    void initState(){

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_mvc_example/common/utils/toast.dart';
 import 'http.dart';
 import 'list_bean.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -151,18 +152,6 @@ class HomeChildController extends BaseController {
 
 
   void showToast(String message) {
-    FToast(context).showToast(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-          decoration: BoxDecoration(
-              color: Color(0xcc000000),
-              borderRadius: BorderRadius.circular(20)),
-          child: Text(
-            message,
-            style: TextStyle(inherit: false, color: Colors.white, fontSize: 15),
-          ),
-        ),
-        toastDuration: Duration(milliseconds: 1500),
-        gravity: ToastGravity.CENTER);
+    T.show(context,message);
   }
 }

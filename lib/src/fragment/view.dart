@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvc/flutter_mvc.dart';
 
-class FragmentWidget extends StatefulWidget {
+class MvcTabView extends StatefulWidget {
   final List<BaseController> children;
-  final FragmentController controller;
+  final MvcTabController controller;
 
-  FragmentWidget({@required this.controller, this.children});
+  MvcTabView({@required this.controller, this.children});
 
   @override
-  _FragmentWidgetState createState() => _FragmentWidgetState();
+  _MvcTabViewState createState() => _MvcTabViewState();
 }
 
-class _FragmentWidgetState extends State<FragmentWidget> with WidgetsBindingObserver {
-  FragmentController controller;
+class _MvcTabViewState extends State<MvcTabView> {
+  MvcTabController controller;
 
   @override
   void initState() {
@@ -20,40 +20,29 @@ class _FragmentWidgetState extends State<FragmentWidget> with WidgetsBindingObse
     controller._registerState(this);
     initController();
     controller.firstResume();
-    WidgetsBinding.instance.addObserver(this);
     super.initState();
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
 
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
 
-    super.didChangeAppLifecycleState(state);
-    if(state==AppLifecycleState.resumed){
-      controller.resume();
-    }else if(state==AppLifecycleState.paused){
-      controller.pause();
-    }
+  bool isInitListener=false;
+  void initListener(BaseController c){
+    if(isInitListener) return;
+    isInitListener=true;
+    var _state=MvcAttribute.getMvcAttributeByController(c).state;
+    _state.addOnPauseListener(controller.pause);
+    _state.addOnResumerListener(controller.resume);
+
   }
+
 
   var isStart = true;
 
-  @override
-  void deactivate() {
-    isStart = !isStart;
-    if (isStart) {
-      controller.resume();
-    } else {
-     controller.pause();
-    }
-    super.deactivate();
-  }
 
   void initController() {
     for (var controller in widget.children) {
@@ -65,27 +54,33 @@ class _FragmentWidgetState extends State<FragmentWidget> with WidgetsBindingObse
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: IndexedStack(
-        key: controller._stackKey,
-        index: controller.index,
-        children: widget.children.map((BaseController controller) {
-          return controller.page.widget;
-        }).toList(),
-      ),
+    return ControllerBuilder(
+
+      builder: (BaseController c) {
+        initListener(c);
+        return Container(
+          child: IndexedStack(
+            key: controller._stackKey,
+            index: controller.index,
+            children: widget.children.map((BaseController controller) {
+              return controller.widget;
+            }).toList(),
+          ),
+        );
+      }
     );
   }
 }
 
-class FragmentController {
+class MvcTabController {
   State _state;
   int index = 0;
 
-  FragmentWidget get widget {
+  MvcTabView get widget {
     if (_state?.widget == null) {
       return null;
     }
-    return _state.widget as FragmentWidget;
+    return _state.widget as MvcTabView;
   }
 
   GlobalKey _stackKey = GlobalKey();
@@ -127,7 +122,7 @@ class FragmentController {
     }
     var baseController = widget.children[this.index];
     baseController.onResume();
-    baseController.page?.onResume();
+    BaseController.getMvcAttribute(baseController).page?.onResume();
   }
 
   //暂停回掉
@@ -138,7 +133,8 @@ class FragmentController {
     var index = i ?? this.index;
     var baseController = widget.children[index];
     baseController.onPause();
-    baseController.page?.onPause();
+
+    BaseController.getMvcAttribute(baseController).page?.onPause();
   }
 
   void animToPage(int index) {
