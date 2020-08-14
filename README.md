@@ -169,8 +169,8 @@ class MainPage extends BasePage<MainController> {
 # example
 * 基础用法
 * demo-Home界面:<br/>
-controller:[/example/lib/mvc/home/controller.dart](https://github.com/lxiuyuan/flutter_mvc/blob/master/example/lib/mvc/demo/home/controller.dart)<br/>
-view.dart  :[/example/lib/mvc/home/view.dart](https://github.com/lxiuyuan/flutter_mvc/blob/master/example/lib/mvc/demo/home/view.dart)<br/>
+[/example/lib/mvc/home/controller.dart](https://github.com/lxiuyuan/flutter_mvc/blob/master/example/lib/mvc/demo/home/controller.dart)<br/>
+[/example/lib/mvc/home/view.dart](https://github.com/lxiuyuan/flutter_mvc/blob/master/example/lib/mvc/demo/home/view.dart)<br/>
 
 ![](https://raw.githubusercontent.com/lxiuyuan/flutter_mvc/master/images/home.jpg)
 
