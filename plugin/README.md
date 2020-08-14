@@ -1,6 +1,6 @@
 ## 安装
-[下载本地](https://github.com/lxiuyuan/flutter_mvc/raw/master/plugin/flutter_mvc.zip)
-[安装教程](https://www.jianshu.com/p/ba154b1518ec)<br/>
+[下载本地插件](https://github.com/lxiuyuan/flutter_mvc/raw/master/plugin/flutter_mvc.zip)
+[本地安装教程](https://www.jianshu.com/p/ba154b1518ec)<br/>
 ## 介绍
 1.一键生成基础代码
 
