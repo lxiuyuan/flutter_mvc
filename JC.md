@@ -8,7 +8,7 @@
 ```
 
 # 0.2. 安装idea插件
-### 本地安装
+### mvc插件本地安装
 [下载插件](https://github.com/lxiuyuan/flutter_mvc/raw/master/plugin/flutter_mvc.zip)
 [安装教程](https://www.jianshu.com/p/ba154b1518ec)<br/>
 
@@ -30,7 +30,7 @@
   }
 ```
 
-# 3.创建view.dart，controller.dart（idea除阿健创建）
+# 3.创建view.dart，controller.dart（idea插件创建）
 
 ![](https://github.com/lxiuyuan/flutter_mvc/blob/master/plugin/cueqf-9bdx2.gif?raw=true)
 
