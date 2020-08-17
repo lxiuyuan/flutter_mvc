@@ -31,6 +31,7 @@
 ```
 
 # 3.创建view.dart，controller.dart（idea除阿健创建）
+
 ![](https://github.com/lxiuyuan/flutter_mvc/blob/master/plugin/cueqf-9bdx2.gif?raw=true)
 
 
