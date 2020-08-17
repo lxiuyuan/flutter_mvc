@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_mvc/src/ele.dart';
 import 'page.dart';
@@ -42,19 +43,35 @@ abstract class BaseState<T extends StatefulWidget, S extends BaseController>
   }
 }
 
+
+class MvcStatelessWidget<T extends BaseController> extends StatelessWidget {
+
+  MvcStatelessElement element;
+
+
+  T get c=>element.controller;
+  T get controller=>element.controller;
+
+  @override
+  MvcStatelessElement createElement() {
+    return MvcStatelessElement(this);
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+
 //ControllerBuild 获取
-class ControllerBuilder<T extends BaseController> extends StatelessWidget {
-  T controller;
+class ControllerBuilder<T extends BaseController> extends MvcStatelessWidget<T> {
   final Widget Function(T controller) builder;
 
   ControllerBuilder({this.builder});
 
   @override
   Widget build(BuildContext context) {
-    if (controller == null) {
-      controller = ControllerInherited.of(context).controller;
-    }
-    return builder(controller);
+    return builder(c);
   }
 }
 
