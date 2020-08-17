@@ -46,25 +46,31 @@ void jsonToChildListBean(Map<String,dynamic> json,ListBean bean){
    if(json==null) return;
    bean.status=int.parse(json["status"]?.toString()??"0");
    bean.message=json["message"]?.toString()??"";
-   bean.data=ListDataBean(json["data"]);
-}
+   if(json["data"] is Map<String,dynamic>) bean.data=ListDataBean(json["data"]);
+   else print("jsonToDart类型错误 not of Map<String dynamic>:${json["data"]}");}
 void jsonToChildListDataBean(Map<String,dynamic> json,ListDataBean bean){
    if(json==null) return;
    bean.banner=[];
+   if(json["banner"]!=null&&json["banner"] is List)
    for(var item in json["banner"]){
       bean.banner.add(item?.toString()??"");
    }
    bean.classify=[];
+   if(json["classify"]!=null&&json["classify"] is List)
    for(var item in json["classify"]){
-      bean.classify.add(ListDataClassifyBean(item));
+      if(item is Map<String,dynamic>) bean.classify.add(ListDataClassifyBean(item));
+      else print("jsonToDart类型错误 not of Map<String dynamic>:${item}");
    }
    bean.trend=[];
+   if(json["trend"]!=null&&json["trend"] is List)
    for(var item in json["trend"]){
       bean.trend.add(item?.toString()??"");
    }
    bean.like=[];
+   if(json["like"]!=null&&json["like"] is List)
    for(var item in json["like"]){
-      bean.like.add(ListDataLikeBean(item));
+      if(item is Map<String,dynamic>) bean.like.add(ListDataLikeBean(item));
+      else print("jsonToDart类型错误 not of Map<String dynamic>:${item}");
    }
 }
 void jsonToChildListDataClassifyBean(Map<String,dynamic> json,ListDataClassifyBean bean){

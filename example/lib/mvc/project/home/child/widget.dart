@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_mvc_example/mvc/case/widget/widget.dart';
 import 'controller.dart';
 import 'package:flutter_mvc/flutter_mvc.dart';
 
@@ -40,59 +41,58 @@ class BackgroundItem extends StatelessWidget {
 }
 
 //banner模块
-class BannerItem extends StatelessWidget {
+// ignore: must_be_immutable
+class BannerItem extends MvcStatelessWidget<HomeChildController> {
   @override
   Widget build(BuildContext context) {
-    return ControllerBuilder(builder: (HomeChildController c) {
-      return Container(
-        height: 170,
-        child: Stack(
-          children: <Widget>[
-            BackgroundItem(),
-            PageView.builder(
-                controller: c.pageController,
-                itemCount: c.dataBanner.length,
-                itemBuilder: (ctx, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      c.onBannerItemClick(index);
-                    },
-                    child: Container(
-                        padding: EdgeInsets.only(top: 8, left: 8, right: 8),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.network(
-                            c.dataBanner[index],
-                            fit: BoxFit.fill,
-                          ),
-                        )),
-                  );
-                }),
-            Positioned(
-                right: 15,
-                bottom: 10,
-                child: Stateful(
-                    bind: () => [c.bannerIndex],
-                    builder: (context) {
-                      return Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                        decoration: BoxDecoration(
-                            color: Color(0x66000000),
-                            borderRadius: BorderRadius.circular(32)),
-                        child: Text(
-                          "${c.bannerIndex + 1}/${c.dataBanner.length}",
-                          style: TextStyle(
-                              inherit: false,
-                              color: Colors.white,
-                              fontSize: 15),
+    return Container(
+      height: 170,
+      child: Stack(
+        children: <Widget>[
+          BackgroundItem(),
+          PageView.builder(
+              controller: c.pageController,
+              itemCount: c.dataBanner.length,
+              itemBuilder: (ctx, index) {
+                return GestureDetector(
+                  onTap: () {
+                    c.onBannerItemClick(index);
+                  },
+                  child: Container(
+                      padding: EdgeInsets.only(top: 8, left: 8, right: 8),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.network(
+                          c.dataBanner[index],
+                          fit: BoxFit.fill,
                         ),
-                      );
-                    }))
-          ],
-        ),
-      );
-    });
+                      )),
+                );
+              }),
+          Positioned(
+              right: 15,
+              bottom: 10,
+              child: Stateful(
+                  bind: () => [c.bannerIndex],
+                  builder: (context) {
+                    return Container(
+                      padding:
+                      EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                      decoration: BoxDecoration(
+                          color: Color(0x66000000),
+                          borderRadius: BorderRadius.circular(32)),
+                      child: Text(
+                        "${c.bannerIndex + 1}/${c.dataBanner.length}",
+                        style: TextStyle(
+                            inherit: false,
+                            color: Colors.white,
+                            fontSize: 15),
+                      ),
+                    );
+                  }))
+        ],
+      ),
+    );
   }
 }
 
