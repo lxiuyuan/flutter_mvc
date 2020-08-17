@@ -32,4 +32,4 @@
 
 # 3.创建view.dart，controller.dart（idea插件创建）
 
-![](https://gitee.com/dingjinyuandroid_admin/wsy_gys/blob/master/app/src/main/res/mipmap-xxhdpi/camera.png)
+![](https://njc-download.weiyun.com/ftn_handler/4cfd9b79b3f6ca1881afa18ea1a0f95502f63574210a04607b1c727351169b45ebe6e065f0dd49f5f69cafd6e304b461e0889f538a7ab555531e7baaab727982/cueqf-9bdx2.gif?fname=cueqf-9bdx2.gif&from=30013&version=3.3.3.3)
