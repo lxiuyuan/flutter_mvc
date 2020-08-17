@@ -32,4 +32,4 @@
 
 # 3.创建view.dart，controller.dart（idea插件创建）
 
-![](https://gitee.com/dingjinyuandroid_admin/wsy_gys/blob/master/app/src/main/res/mipmap-xxhdpi/icon_blue_add__.png)
+![](https://gitee.com/dingjinyuandroid_admin/wsy_gys/blob/master/app/src/main/res/mipmap-xxhdpi/camera.png)
