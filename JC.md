@@ -1,16 +1,6 @@
 # flutter_mvc教程
 # 目录
-
-#### [0.环境安装](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#0%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85)
-* [0.1安装插件](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#01-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6)
-* [0.2. 安装idea插件](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#02-%E5%AE%89%E8%A3%85idea%E6%8F%92%E4%BB%B6)
-#### [1. 初始化MvcMaterialApp](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#1-%E5%88%9D%E5%A7%8B%E5%8C%96mvcmaterialapp)
-#### [2.创建mvc（idea插件创建）](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#2%E5%88%9B%E5%BB%BAmvcidea%E6%8F%92%E4%BB%B6%E5%88%9B%E5%BB%BA)
-#### [3.启动controller](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#3%E5%90%AF%E5%8A%A8controller-1)
-* [3.1首页方式启动](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#31-%E9%A6%96%E9%A1%B5%E6%96%B9%E5%BC%8F%E5%90%AF%E5%8A%A8)
-* [3.2路由方式启动](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#31-%E9%A6%96%E9%A1%B5%E6%96%B9%E5%BC%8F%E5%90%AF%E5%8A%A8)
-
-
+[toc]
 # 0.环境安装
 ### 0.1. 安装插件
 `pubspec.yaml`
