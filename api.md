@@ -32,10 +32,7 @@
     }
 
     ```
-## 3.BasePage(view.dart)
-- 界面要当前类下面
-- 属性c、controller 来获取当前对应的BaseController对象
-## 4.Stateful
+## 3.Stateful
 - 局部刷新<br/>
 bing：要绑定的变量<br/>
 builder:要build的视图
@@ -46,9 +43,13 @@ builder:要build的视图
         return widget;
     })
     ```
+## 4.BasePage(view.dart)
+- 界面要当前类下面
+- 属性c、controller 来获取当前对应的BaseController对象
+
 
   
-## 4.BaseController(controller.dart)
+## 5.BaseController(controller.dart)
 * 构造函数
   ```Dart
   ThisController():BaseController(ThisPage());
