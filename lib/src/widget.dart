@@ -21,7 +21,7 @@ class ControllerInherited extends InheritedWidget{
 }
 
 ///State基类 获取controller
-abstract class BaseState<T extends StatefulWidget, S extends BaseController>
+abstract class MvcState<T extends StatefulWidget, S extends BaseController>
     extends State<T> {
   S _controller;
 

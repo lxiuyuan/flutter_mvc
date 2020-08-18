@@ -29,7 +29,7 @@ class MvcStatefulWidget extends StatefulWidget {
 }
 
 class _MvcStatefulWidgetState
-    extends BaseState<MvcStatefulWidget, WidgetController> {
+    extends MvcState<MvcStatefulWidget, WidgetController> {
   @override
   Widget build(BuildContext context) {
     print("BaseState+Stateful:Build");

@@ -22,5 +22,24 @@ class HomeController extends BaseController {
        childControllers=tabs.map((e) => HomeChildController(e)).toList();
        tabController.combinationWithPage(pageController);
    }
+
+   @override
+  void onResume() {
+    super.onResume();
+  }
+
+  @override
+  void onPause() {
+    super.onPause();
+  }
+
+   @override
+  void dispose() {
+    super.dispose();
+  }
    
 }
+
+
+
+

@@ -6,7 +6,12 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d1d3cf-85ee-43ec-86f6-21b1ab37d0ac" name="Default Changelist" comment="" />
+    <list default="true" id="33d1d3cf-85ee-43ec-86f6-21b1ab37d0ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JC.md" beforeDir="false" afterPath="$PROJECT_DIR$/JC.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/mvc/project/home/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/mvc/project/home/controller.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,12 +118,12 @@
     <state width="1398" height="280" key="GridCell.Tab.0.right/0.23.1440.784@0.23.1440.784" timestamp="1597311223108" />
     <state width="1398" height="275" key="GridCell.Tab.0.right/0.23.1440.788@0.23.1440.788" timestamp="1597652841359" />
     <state width="1398" height="275" key="GridCell.Tab.0.right/0.23.1440.792@0.23.1440.792" timestamp="1597665299003" />
-    <state x="221" y="54" key="SettingsEditor" timestamp="1597650176755">
-      <screen x="0" y="23" width="1440" height="788" />
+    <state x="221" y="54" key="SettingsEditor" timestamp="1597727400242">
+      <screen x="0" y="23" width="1440" height="792" />
     </state>
     <state x="221" y="54" key="SettingsEditor/0.23.1440.784@0.23.1440.784" timestamp="1597315678118" />
     <state x="221" y="54" key="SettingsEditor/0.23.1440.788@0.23.1440.788" timestamp="1597650176755" />
-    <state x="221" y="54" key="SettingsEditor/0.23.1440.792@0.23.1440.792" timestamp="1597633316015" />
+    <state x="221" y="54" key="SettingsEditor/0.23.1440.792@0.23.1440.792" timestamp="1597727400242" />
     <state x="297" y="146" width="845" height="538" key="find.popup" timestamp="1597396951920">
       <screen x="0" y="23" width="1440" height="788" />
     </state>

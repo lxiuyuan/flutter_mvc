@@ -6,7 +6,7 @@ export 'src/fragment/view.dart';
 export 'src/animation.dart';
 export 'src/manager.dart';
 export 'src/animation.dart';
-export 'src/widget.dart' show Stateful,ControllerBuilder,BaseState,MvcStatelessWidget;
+export 'src/widget.dart' show Stateful,ControllerBuilder,MvcState,MvcStatelessWidget;
 export 'src/material_app.dart';
 class FlutterMvc {
   static const MethodChannel _channel =
