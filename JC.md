@@ -30,13 +30,14 @@
   }
 ```
 
-# 3.创建view.dart，controller.dart（idea插件创建）
+# 2.创建view.dart，controller.dart（idea插件创建）
+
 
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7a1537a01a545308da600250857b766~tplv-k3u1fbpfcp-zoom-1.image)
 
 
-# 4打开界面
-#### 4.1 首页启动
+# 3打开界面
+#### 3.1 首页启动
 `main.dart`
 ```Dart
   @override
@@ -47,7 +48,7 @@
     );
   }
 ```
-#### 4.2 路由方式打开
+#### 3.2 路由方式打开
 ```Dart
     new ShopController().push(context);
 ```
