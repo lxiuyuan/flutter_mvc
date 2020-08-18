@@ -44,7 +44,7 @@
 
 # 2.创建mvc（idea插件创建）
 
-![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7a1537a01a545308da600250857b766~tplv-k3u1fbpfcp-zoom-1.image)
+![gif](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7a1537a01a545308da600250857b766~tplv-k3u1fbpfcp-zoom-1.image)
 
 
 # 3.启动controller
