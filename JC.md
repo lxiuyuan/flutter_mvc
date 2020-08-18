@@ -1,4 +1,16 @@
 # flutter_mvc教程
+#目录
+
+### [0.环境安装](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#0%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85)
+* [0.1安装插件](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#01-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6)
+* [0.2. 安装idea插件](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#02-%E5%AE%89%E8%A3%85idea%E6%8F%92%E4%BB%B6)
+### [1. 初始化MvcMaterialApp](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#1-%E5%88%9D%E5%A7%8B%E5%8C%96mvcmaterialapp)
+### [2.创建view.dart，controller.dart（idea插件创建）](https://github.com/lxiuyuan/flutter_mvc/blob/master/JC.md#2%E5%88%9B%E5%BB%BAviewdartcontrollerdartidea%E6%8F%92%E4%BB%B6%E5%88%9B%E5%BB%BA)
+### [3.启动controller]()
+* [3.1首页方式启动]()
+* [3.2路由方式启动]()
+
+
 # 0.环境安装
 ### 0.1. 安装插件
 `pubspec.yaml`
@@ -30,14 +42,13 @@
   }
 ```
 
-# 2.创建view.dart，controller.dart（idea插件创建）
-
+# 2.创建mvc（idea插件创建）
 
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7a1537a01a545308da600250857b766~tplv-k3u1fbpfcp-zoom-1.image)
 
 
-# 3打开界面
-#### 3.1 首页启动
+# 3.启动controller
+#### 3.1 首页方式启动
 `main.dart`
 ```Dart
   @override
@@ -48,9 +59,10 @@
     );
   }
 ```
-#### 3.2 路由方式打开
+#### 3.2 路由方式启动
 ```Dart
     new ShopController().push(context);
 ```
+
 
 
