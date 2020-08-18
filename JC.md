@@ -1,14 +1,14 @@
 # flutter_mvc教程
-
-# 0.1. 安装插件
+# 0.环境安装
+### 0.1. 安装插件
 `pubspec.yaml`
 ```yaml
   flutter_mvc:
     git: https://github.com/lxiuyuan/flutter_mvc.git
 ```
 
-# 0.2. 安装idea插件
-### mvc插件本地安装
+### 0.2. 安装idea插件
+##### mvc插件本地安装
 [下载插件](https://github.com/lxiuyuan/flutter_mvc/raw/master/plugin/flutter_mvc.zip)
 [安装教程](https://www.jianshu.com/p/ba154b1518ec)<br/>
 
@@ -32,4 +32,24 @@
 
 # 3.创建view.dart，controller.dart（idea插件创建）
 
-![](https://njc-download.weiyun.com/ftn_handler/4cfd9b79b3f6ca1881afa18ea1a0f95502f63574210a04607b1c727351169b45ebe6e065f0dd49f5f69cafd6e304b461e0889f538a7ab555531e7baaab727982/cueqf-9bdx2.gif?fname=cueqf-9bdx2.gif&from=30013&version=3.3.3.3)
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7a1537a01a545308da600250857b766~tplv-k3u1fbpfcp-zoom-1.image)
+
+
+# 4打开界面
+#### 4.1 首页启动
+`main.dart`
+```Dart
+  @override
+  Widget build(BuildContext context) {
+    return MvcMaterialApp(
+      isStandbyLifecycle: true,
+      home:ShopController().widget,//在这里打开widget
+    );
+  }
+```
+#### 4.2 路由方式打开
+```Dart
+    new ShopController().push(context);
+```
+
+
