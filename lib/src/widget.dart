@@ -5,13 +5,20 @@ import 'page.dart';
 class ControllerInherited extends InheritedWidget{
   final BaseController controller;
   BuildContext context;
+
+  Element parentContext;
   ControllerInherited({this.controller,Widget child}):super(child:child);
   @override
   bool updateShouldNotify(ControllerInherited oldWidget) {
     context=oldWidget.context;
+    parentContext=oldWidget.parentContext;
     return oldWidget.controller!=controller;
   }
 
+  @override
+  MvcInheritedElement createElement() {
+    return MvcInheritedElement(this);
+  }
 
 
   //定义一个便捷方法，方便子树中的widget获取共享数据
@@ -28,7 +35,7 @@ class ControllerInherited extends InheritedWidget{
     if(inherited.controller is T){
       return inherited.controller;
     }
-    return ofController(inherited.context);
+    return ofController(inherited.parentContext);
   }
 
 

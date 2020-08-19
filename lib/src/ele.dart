@@ -27,9 +27,15 @@ class MvcStatelessElement extends StatelessElement {
 
 }
 
-class MvcInherited extends InheritedElement{
+class MvcInheritedElement extends InheritedElement{
   ControllerInherited w;
-  MvcInherited(this.w) : super(w);
+  MvcInheritedElement(this.w) : super(w);
+
+  @override
+  void mount(Element parent, dynamic newSlot) {
+    w.parentContext=parent;
+    super.mount(parent, newSlot);
+  }
 
   @override
   Widget build(){
