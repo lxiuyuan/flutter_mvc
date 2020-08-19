@@ -65,6 +65,25 @@ abstract class BasePage<T extends BaseController> {
     return _PageWidget(this);
   }
 
+  ///创建loading 样式组件
+  ///可以被重写
+  Widget createLoadingWidget() {
+    return Center(
+      child: SizedBox(
+          width: 28,
+          height: 28,
+          child: CupertinoActivityIndicator(
+            radius: 15,
+          )),
+    );
+  }
+
+  //重写底层视图
+  //Widget child:build之后的试图
+  Widget buildBuilder(BuildContext context,Widget child){
+    return child;
+  }
+
   @protected
   @mustCallSuper
   void initState() {}
@@ -190,18 +209,7 @@ class __PageWidgetState extends State<_PageWidget>
     super.dispose();
   }
 
-  ///创建loading 样式组件
-  ///可以被重写
-  Widget createLoadingWidget() {
-    return Center(
-      child: SizedBox(
-          width: 28,
-          height: 28,
-          child: CupertinoActivityIndicator(
-            radius: 15,
-          )),
-    );
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -209,12 +217,12 @@ class __PageWidgetState extends State<_PageWidget>
       children: [
         //存储controller的共享组件
         ControllerInherited(
-            controller: basePage.controller, child: basePage.build(context)),
+            controller: basePage.controller, child: basePage.buildBuilder(context, basePage.buildBuilder(context, basePage.build(context)))),
         //加载框
         Visibility(
             child: LoadingDialog(
           controller: basePage._loadingController,
-          child: createLoadingWidget(),
+          child: basePage.createLoadingWidget(),
         ))
       ],
     );
