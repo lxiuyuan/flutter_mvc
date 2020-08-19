@@ -25,6 +25,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+
     //需要用MvcMaterialApp代替MaterialApp
     return MvcMaterialApp(
       isStandbyLifecycle: true,

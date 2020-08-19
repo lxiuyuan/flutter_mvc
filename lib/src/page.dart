@@ -277,6 +277,9 @@ class BaseController {
 //    _startPage();
   }
 
+  static bool isMvcWidget(Widget widget){
+    return widget is _PageWidget;
+  }
   ///获取内部变量 mvc config
   static MvcAttribute getMvcAttribute(BaseController c) {
     return c._mvcAttribute;
