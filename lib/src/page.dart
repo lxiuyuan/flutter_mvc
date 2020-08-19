@@ -291,6 +291,10 @@ class BaseController {
      }
      return null;
   }
+
+  static T of<T extends BaseController>(BuildContext context){
+    return ControllerInherited.ofController<T>(context);
+  }
   ///获取内部变量 mvc config
   static MvcAttribute getMvcAttribute(BaseController c) {
     return c._mvcAttribute;
