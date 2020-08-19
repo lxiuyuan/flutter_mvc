@@ -4,17 +4,31 @@ import 'package:flutter_mvc/src/ele.dart';
 import 'page.dart';
 class ControllerInherited extends InheritedWidget{
   final BaseController controller;
+  BuildContext context;
   ControllerInherited({this.controller,Widget child}):super(child:child);
   @override
   bool updateShouldNotify(ControllerInherited oldWidget) {
+    context=oldWidget.context;
     return oldWidget.controller!=controller;
   }
+
+
 
   //定义一个便捷方法，方便子树中的widget获取共享数据
   static ControllerInherited of(BuildContext context) {
 
     return context.dependOnInheritedWidgetOfExactType<ControllerInherited>();
-//    return context.inheritFromWidgetOfExactType(ControllerInherited);
+  }
+
+  static T ofController<T extends BaseController>(BuildContext context){
+    ControllerInherited inherited=of(context);
+    if(inherited==null){
+      return null;
+    }
+    if(inherited.controller is T){
+      return inherited.controller;
+    }
+    return ofController(inherited.context);
   }
 
 

@@ -9,6 +9,7 @@ class MvcStatelessElement extends StatelessElement {
   }
 
 
+  @override
   Widget build(){
     (widget as MvcStatelessWidget).element=this;
     return super.build();
@@ -24,4 +25,16 @@ class MvcStatelessElement extends StatelessElement {
      return _controller;
   }
 
+}
+
+class MvcInherited extends InheritedElement{
+  ControllerInherited w;
+  MvcInherited(this.w) : super(w);
+
+  @override
+  Widget build(){
+    w.context=this;
+    return super.build();
+
+  }
 }
