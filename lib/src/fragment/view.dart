@@ -37,7 +37,6 @@ class _MvcTabViewState extends State<MvcTabView> {
     var _state=MvcAttribute.getMvcAttributeByController(c).state;
     _state.addOnPauseListener(controller.pause);
     _state.addOnResumerListener(controller.resume);
-
   }
 
 

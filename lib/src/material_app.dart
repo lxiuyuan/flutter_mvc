@@ -52,6 +52,7 @@ class MvcMaterialApp extends MaterialApp {
           darkTheme: darkTheme,
           themeMode: themeMode,
           locale: locale,
+          builder:builder,
           localizationsDelegates: localizationsDelegates,
           localeListResolutionCallback: localeListResolutionCallback,
           localeResolutionCallback: localeResolutionCallback,
