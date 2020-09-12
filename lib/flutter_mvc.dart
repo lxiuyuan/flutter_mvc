@@ -4,11 +4,11 @@ import 'package:flutter/services.dart';
 export 'src/page.dart';
 export 'src/fragment/view.dart';
 export 'src/animation.dart';
-export 'src/manager.dart';
 export 'src/animation.dart';
 export 'src/widget.dart' show Stateful,ControllerBuilder,MvcState,MvcStatelessWidget;
 export 'src/material_app.dart';
 export 'src/manager.dart';
+export 'src/navigator.dart';
 class FlutterMvc {
   static const MethodChannel _channel =
       const MethodChannel('flutter_mvc');
