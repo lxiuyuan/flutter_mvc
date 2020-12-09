@@ -23,6 +23,11 @@ class _LoadingDialogState extends State<LoadingDialog>
   void initState() {
     controller = widget.controller;
     controller._registerState(this);
+    try{
+      controller._animController.dispose();
+    }catch(e){
+
+    }
     controller.animController = new AnimationController(
         duration: Duration(milliseconds: 400), value: 0, vsync: this);
     super.initState();
@@ -30,7 +35,8 @@ class _LoadingDialogState extends State<LoadingDialog>
 
   @override
   void dispose() {
-//    controller._animController.dispose();
+   controller._animController?.stop();
+   controller._animController=null;
     super.dispose();
   }
 
