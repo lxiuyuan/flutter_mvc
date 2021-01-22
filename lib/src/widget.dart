@@ -206,12 +206,12 @@ class StatefulState extends State<Stateful> {
 
 ///对比list是否一样
 bool _listDiff(List newList, List oldList) {
-  if (newList.length != oldList.length) {
+  if (newList?.length != oldList?.length) {
     return true;
   }
   var diffs = newList;
   var oldDiffs = oldList;
-  for (int i = 0; i < diffs.length; i++) {
+  for (int i = 0; i < diffs?.length??0; i++) {
     if (_diffValue(diffs[i], oldDiffs[i])) {
       return true;
     }
@@ -222,10 +222,10 @@ bool _listDiff(List newList, List oldList) {
 ///对比map是否一样
 bool _mapDiff(Map newMap, Map oldMap) {
   //判断两者数量不一致
-  if (newMap.length != oldMap.length) {
+  if (newMap?.length != oldMap?.length) {
     return true;
   }
-  var newKey = newMap.keys;
+  var newKey = newMap?.keys??[];
   for (var key in newKey) {
     //判断map有新增key
     if (!oldMap.containsKey(key)) {
@@ -234,10 +234,10 @@ bool _mapDiff(Map newMap, Map oldMap) {
     if (_diffValue(newMap[key], oldMap[key])) {
       return true;
     }
-    oldMap.remove(key);
+    oldMap?.remove(key);
   }
   //如果老的map比新的map多值
-  if (oldMap.length > 0) {
+  if ((oldMap?.length??0) > 0) {
     return true;
   }
   return false;
@@ -245,21 +245,31 @@ bool _mapDiff(Map newMap, Map oldMap) {
 
 ///对比值是否一样
 bool _diffValue(dynamic newValue, dynamic oldValue) {
-  if (newValue.runtimeType != oldValue.runtimeType) {
+  if (newValue?.runtimeType != oldValue?.runtimeType) {
     return true;
   }
   if (newValue is List) {
-    if (_listDiff(newValue, oldValue)) {
-      return true;
-    }
+    return (_listDiff(newValue, oldValue)) ;
+
+    return false;
+  } if (newValue is List<dynamic>) {
+    return  (_listDiff(newValue, oldValue)) ;
+
   } else if (newValue is Map) {
-    if (_mapDiff(newValue, oldValue)) {
+    return (_mapDiff(newValue, oldValue)) ;
+  }
+  
+  //不是list并且不是map的情况下  判断两个变量值是不是一样
+  if(newValue is num||newValue is String||newValue is bool){
+    if(newValue!=oldValue){
       return true;
     }
-  }
-  //不是list并且不是map的情况下  判断两个变量值是不是一样
-  if (newValue != oldValue) {
-    return true;
+  }else {
+    if(!identical(newValue,oldValue)){
+      print("namess:${newValue is List}");
+      return true;
+    }
+
   }
   return false;
 }

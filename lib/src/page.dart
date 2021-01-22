@@ -320,8 +320,11 @@ class BaseController {
   ///  跳转路由。
   ///  需要自定义路由调用routeBuilder
   Future<dynamic> push(BuildContext context,
-      {RouteBuilder routeBuilder = _kRouteBuild}) async {
+      {RouteBuilder routeBuilder }) async {
     if (_mvcAttribute.route == null) {
+      if(routeBuilder==null){
+        routeBuilder=_kRouteBuild;
+      }
       var route = routeBuilder(this._page.widget);
       _mvcAttribute.route = route;
       return await Navigator.of(context).push(route);
@@ -360,9 +363,6 @@ class BaseController {
       }
     } catch (e) {
       print(e);
-      Future.delayed(Duration(milliseconds: 50), () {
-        _setState(state);
-      });
     }
   }
 
