@@ -63,9 +63,8 @@ abstract class MvcState<T extends StatefulWidget, S extends BaseController>
   }
 }
 
-
+// ignore: must_be_immutable
 class MvcStatelessWidget<T extends BaseController> extends StatelessWidget {
-
   MvcStatelessElement element;
 
 

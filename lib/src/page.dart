@@ -248,7 +248,7 @@ class BasePageRoute extends MaterialPageRoute {
 typedef BasePageRouteBuilder = BasePage Function(BuildContext context);
 typedef RouteBuilder = Route Function(Widget widget);
 
-const RouteBuilder _kRouteBuild = _routeBuild;
+ RouteBuilder _kRouteBuild = _routeBuild;
 
 Route _routeBuild(Widget widget) {
   return MaterialPageRoute(builder: (context) {
@@ -292,6 +292,7 @@ class BaseController {
      return null;
   }
 
+
   static T of<T extends BaseController>(BuildContext context){
     return ControllerInherited.ofController<T>(context);
   }
@@ -317,13 +318,16 @@ class BaseController {
     this._state = state;
   }
 
+
+  static RouteBuilder defaultRoute = _routeBuild;
+
   ///  跳转路由。
   ///  需要自定义路由调用routeBuilder
   Future<dynamic> push(BuildContext context,
       {RouteBuilder routeBuilder }) async {
     if (_mvcAttribute.route == null) {
       if(routeBuilder==null){
-        routeBuilder=_kRouteBuild;
+        routeBuilder=defaultRoute;
       }
       var route = routeBuilder(this._page.widget);
       _mvcAttribute.route = route;

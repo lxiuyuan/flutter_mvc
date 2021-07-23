@@ -59,7 +59,6 @@ class _MvcTabViewState extends State<MvcTabView> {
         initListener(c);
         return Container(
           child: IndexedStack(
-            key: controller._stackKey,
             index: controller.index,
             children: widget.children.map((BaseController controller) {
               return controller.widget;

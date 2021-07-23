@@ -98,6 +98,9 @@ class MvcNavigatorManager extends NavigatorObserver {
       if (_historyRoute.contains(route)) _historyRoute.remove(route);
     }
   }
+  void pop(BuildContext context,Route<dynamic> route) async {
+    Navigator.of(context).removeRoute(route);
+  }
 
   void _changeListener(Element element, int index) {
     try {
