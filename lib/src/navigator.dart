@@ -12,15 +12,28 @@ class MvcNavigatorManager extends NavigatorObserver {
   Route<dynamic> currentRoute;
 
   @override
-  void didPush(Route<dynamic> route, Route<dynamic> previousRoute) async {
+  void didPush(Route<dynamic> route, Route<dynamic> oldRoute) async {
     currentRoute=route;
+    Route<dynamic> previousRoute=oldRoute;
+    if(route is PopupRoute){
+      return;
+    }
+
+    if(oldRoute is PopupRoute){
+      if(_historyRoute.length>0) {
+        previousRoute = _historyRoute.last;
+      }else{
+        currentRoute=null;
+      }
+    }
+
     if (previousRoute is PageRoute) {
       if (isPauseAndResume)
         _changePauseListenerByElement(
             previousRoute.subtreeContext as Element, VisitorElement());
     }
     _historyRoute.add(route);
-    _getRunType(route);
+    // _getRunType(route);
   }
 
   void _getRunType(Route<dynamic> route) {
@@ -107,8 +120,7 @@ class MvcNavigatorManager extends NavigatorObserver {
       element?.visitChildren((v) {
         if (v != null) {
           if (v is StatefulElement) {
-            if (index >= 25 && index < 35)
-              print("_changeListener-${index}:${v.widget}");
+            if (index >= 25 && index < 35);
           }
         }
         _changeListener(v, index + 1);
@@ -124,14 +136,27 @@ class MvcNavigatorManager extends NavigatorObserver {
   }
 
   @override
-  void didPop(Route<dynamic> route, Route<dynamic> previousRoute) {
+  void didPop(Route<dynamic> route, Route<dynamic> oldRoute) {
+    Route<dynamic> previousRoute=oldRoute;
+    if(route is PopupRoute){
+      return;
+    }
+    _historyRoute.remove(route);
+    if(oldRoute is PopupRoute){
+      if(_historyRoute.length>0) {
+        previousRoute = _historyRoute.last;
+      }else{
+        currentRoute=null;
+      }
+    }
     currentRoute=previousRoute;
+
+
     var attr=BaseController.getMvcAttribute(MvcManager.instance.currentController);
     if(attr.route==route){
       attr.route=null;
     }
-    _historyRoute.remove(route);
-    _getRunType(previousRoute);
+    // _getRunType(previousRoute);
     if (previousRoute is PageRoute) {
 
       if (isPauseAndResume)
